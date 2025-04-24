@@ -17,6 +17,14 @@ export class TranslateServiceMock {
     return null;
   }
 
+  addLangs(langs: string[]): void {
+    return;
+  }
+
+  setDefaultLang(lang: string): void {
+    return;
+  }
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   get(key: string): Observable<TranslationObject> {
     const seoObject = {

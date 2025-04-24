@@ -24,6 +24,6 @@ export class CurriculumComponent {
     tap((lang) => this.customTranslateService.chageLanguage(lang))
   );
   currentLang = toSignal(this.activatedRoute$, {
-    initialValue: this.customTranslateService.getCurentLang(),
+    initialValue: this.customTranslateService.currentLang(),
   });
 }

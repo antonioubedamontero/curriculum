@@ -1,0 +1,6 @@
+@use "styles/variables" as *;
+@use "styles/mixins" as *;
+
+.footer {
+  @include page-general($footer-color);
+}

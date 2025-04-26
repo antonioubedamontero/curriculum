@@ -1,0 +1,6 @@
+@mixin page-general($background-color, $font-color: #000) {
+  height: 100%;
+  background-color: $background-color;
+  color: $font-color;
+  padding: 1rem;
+}

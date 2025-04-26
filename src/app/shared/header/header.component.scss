@@ -1,0 +1,6 @@
+@use "styles/variables" as *;
+@use "styles/mixins" as *;
+
+.header {
+  @include page-general($header-color);
+}

@@ -1,0 +1,35 @@
+.main-container {
+  display: grid;
+  height: 100vh;
+  grid-template-areas:
+    "header"
+    "aside"
+    "main"
+    "footer";
+
+  &__header-container {
+    grid-area: header;
+  }
+
+  &__aside-container {
+    grid-area: aside;
+  }
+
+  &__main-container {
+    grid-area: main;
+  }
+
+  &__footer-container {
+    grid-area: footer;
+  }
+}
+
+@media (min-width: 600px) {
+  /* sm */
+  .main-container {
+    grid-template-areas:
+      "header header header header header"
+      "aside main main main main"
+      "footer footer footer footer footer";
+  }
+}

@@ -5,11 +5,13 @@
     [alt]="'aside.alt.candidate' | translate"
   />
 
-  <h2 class="aside__title">{{ "aside.contact" | translate }}</h2>
+  <h2 class="aside__title">{{ "aside.title" | translate }}</h2>
   <ul class="contact-info">
     <li class="contact-info__item">
       <strong>{{ "aside.email" | translate }}</strong>
-      {{ identificationResponse().email }}
+      <a [href]="`mailto:${identificationResponse().email}`">{{
+        identificationResponse().email
+      }}</a>
     </li>
 
     <li class="contact-info__item">

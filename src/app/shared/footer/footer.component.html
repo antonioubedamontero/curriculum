@@ -1,8 +1,27 @@
 <footer class="footer">
-  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi nesciunt
-  quas consequatur delectus sed perspiciatis excepturi distinctio consectetur
-  velit laboriosam cum adipisci laudantium eveniet, sunt cupiditate, atque odit
-  facilis nobis nam eos officia eum magnam qui repellendus! Repellat,
-  praesentium consequatur veritatis voluptates eligendi dignissimos? Itaque
-  illum tenetur fuga nostrum doloribus libero ab nihil, quasi voluptate
+  <h2 class="footer__title">{{ "footer.title" | translate }}</h2>
+  <strong class="footer__copyright"
+    >&copy; {{ currentYear }} - {{ nameAndSurname() }}</strong
+  >
+  <nav class="footer__networks">
+    <ul class="networks">
+      @for (network of networks(); track network.label) {
+      <li class="networks__network-group">
+        <a
+          [href]="network.url"
+          [attr.target]="network.shouldDownLoad ? null : '_blank'"
+          [attr.download]="network.shouldDownLoad ? 'curriculum' : null"
+          class="network-item"
+        >
+          <img
+            class="network-item__image"
+            [src]="network.icon"
+            [alt]="network.ariaLabel"
+          />
+          <span class="network-item__label">{{ network.label }}</span>
+        </a>
+      </li>
+      }
+    </ul>
+  </nav>
 </footer>

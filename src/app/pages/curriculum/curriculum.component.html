@@ -15,5 +15,12 @@
   }
 
   <app-main class="main-container__main-container" />
-  <app-footer class="main-container__footer-container" />
+
+  <!-- -->
+  @if(identificationResource.hasValue()) {
+  <app-footer
+    [identificationResponse]="identificationResource.value()"
+    class="main-container__footer-container"
+  />
+  }
 </div>

@@ -13,7 +13,8 @@
 
   &__title {
     /* Irrelevant in HTML but required for SEO */
-    display: none;
+    visibility: hidden;
+    font-size: 0.5rem;
   }
 
   @media (min-width: 600px) {
@@ -26,7 +27,7 @@
 
 .contact-info {
   list-style: square;
-  margin: 1rem auto;
+  margin: 0 auto;
 
   &__item {
     font-size: 1.2rem;

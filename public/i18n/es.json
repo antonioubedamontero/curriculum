@@ -1,11 +1,14 @@
 {
   "aside": {
-    "contact": "Contacto:",
+    "title": "Información de contacto:",
     "email": "Email: ",
     "phone": "Teléfono: ",
     "city": "Ciudad: ",
     "alt": {
       "candidate": "Candidato"
     }
+  },
+  "footer": {
+    "title": "Redes sociales: "
   }
 }

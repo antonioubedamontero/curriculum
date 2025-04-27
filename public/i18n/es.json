@@ -1,3 +1,11 @@
 {
-  "title": "Antonio Úbeda Montero | Desarrollador Web"
+  "aside": {
+    "contact": "Contacto:",
+    "email": "Email: ",
+    "phone": "Teléfono: ",
+    "city": "Ciudad: ",
+    "alt": {
+      "candidate": "Candidato"
+    }
+  }
 }

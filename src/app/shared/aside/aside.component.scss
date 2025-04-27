@@ -2,5 +2,37 @@
 @use "styles/mixins" as *;
 
 .aside {
-  @include page-general($aside-color);
+  @include page-general($aside-color, white);
+  display: flex;
+  flex-direction: column;
+
+  &__candidate-photo {
+    width: 10rem;
+    align-self: center;
+  }
+
+  &__title {
+    /* Irrelevant in HTML but required for SEO */
+    display: none;
+  }
+
+  @media (min-width: 600px) {
+    /* sm */
+    &__candidate-photo {
+      width: unset;
+    }
+  }
+}
+
+.contact-info {
+  list-style: square;
+  margin: 1rem auto;
+
+  &__item {
+    font-size: 1.2rem;
+
+    strong {
+      display: block;
+    }
+  }
 }

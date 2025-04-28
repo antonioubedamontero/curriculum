@@ -2,7 +2,7 @@
 @use "styles/mixins" as *;
 
 .footer {
-  @include page-general($footer-color);
+  @include page-general($footer-color, white);
   text-align: center;
   padding: 0;
   margin: 0 auto;
@@ -15,7 +15,7 @@
   }
 
   &__copyright {
-    font-weight: 700;
+    font-weight: 500;
   }
 }
 

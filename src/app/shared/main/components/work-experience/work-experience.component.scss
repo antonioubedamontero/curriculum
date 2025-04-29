@@ -1,0 +1,7 @@
+@use "styles/mixins" as *;
+
+.work-experience {
+  &__title {
+    @include header2;
+  }
+}

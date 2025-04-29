@@ -1,1 +1,27 @@
-<p>aside works!</p>
+<aside class="aside">
+  <img
+    class="aside__candidate-photo"
+    src="images/photo-cv.jpg"
+    [alt]="'aside.alt.candidate' | translate"
+  />
+
+  <h2 class="aside__title">{{ "aside.title" | translate }}</h2>
+  <ul class="contact-info">
+    <li class="contact-info__item">
+      <strong>{{ "aside.email" | translate }}</strong>
+      <a [href]="`mailto:${identificationResponse().email}`">{{
+        identificationResponse().email
+      }}</a>
+    </li>
+
+    <li class="contact-info__item">
+      <strong>{{ "aside.phone" | translate }}</strong>
+      {{ identificationResponse().phone }}
+    </li>
+
+    <li class="contact-info__item">
+      <strong>{{ "aside.city" | translate }}</strong>
+      {{ identificationResponse().provinceCountry }}
+    </li>
+  </ul>
+</aside>

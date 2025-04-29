@@ -1,4 +1,26 @@
-<app-header />
-<app-aside />
-<app-main />
-<app-footer />
+<div class="main-container">
+  @if (identificationResource.hasValue()) {
+  <app-header
+    [identificationResponse]="identificationResource.value()"
+    class="main-container__header-container"
+  />
+  }
+
+  <!-- -->
+  @if(identificationResource.hasValue()) {
+  <app-aside
+    [identificationResponse]="identificationResource.value()"
+    class="main-container__aside-container"
+  />
+  }
+
+  <app-main class="main-container__main-container" />
+
+  <!-- -->
+  @if(identificationResource.hasValue()) {
+  <app-footer
+    [identificationResponse]="identificationResource.value()"
+    class="main-container__footer-container"
+  />
+  }
+</div>

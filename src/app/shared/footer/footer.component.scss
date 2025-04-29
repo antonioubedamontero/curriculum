@@ -1,0 +1,42 @@
+@use "styles/variables" as *;
+@use "styles/mixins" as *;
+
+.footer {
+  @include page-general($footer-color, white);
+  text-align: center;
+  margin: 0 auto;
+
+  &__title {
+    /* Irrelevant in HTML but required for SEO */
+    @include visually-hidden;
+  }
+
+  &__copyright {
+    font-weight: 500;
+  }
+}
+
+.networks {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.network-item {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  &__image {
+    width: 3rem;
+    height: auto;
+  }
+
+  &__label {
+    /* Irrelevant in HMTL but required for SEO */
+    @include visually-hidden;
+  }
+}

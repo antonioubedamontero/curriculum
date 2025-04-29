@@ -1,0 +1,40 @@
+@use "styles/variables" as *;
+@use "styles/mixins" as *;
+
+.aside {
+  @include page-general($aside-color, white);
+  display: flex;
+  flex-direction: column;
+  padding-inline: 0;
+
+  &__candidate-photo {
+    width: 10rem;
+    align-self: center;
+  }
+
+  &__title {
+    /* Irrelevant in HTML but required for SEO */
+    @include visually-hidden;
+  }
+
+  @media (min-width: 600px) {
+    /* sm */
+    &__candidate-photo {
+      width: unset;
+    }
+  }
+}
+
+.contact-info {
+  list-style: square;
+  margin: 0 auto;
+
+  &__item {
+    font-size: 1.2rem;
+    margin-block: 0.5rem;
+
+    strong {
+      display: block;
+    }
+  }
+}

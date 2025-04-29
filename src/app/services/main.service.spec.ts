@@ -1,19 +1,29 @@
 import { TestBed } from '@angular/core/testing';
 
 import { MainService } from './main.service';
-import { provideHttpClient, withFetch } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { ApiPathProxyService } from './api-path-proxy.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('MainService', () => {
   let service: MainService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [provideHttpClient(withFetch()), provideHttpClientTesting()],
+      providers: [
+        provideHttpClient(),
+        provideHttpClientTesting(),
+        ApiPathProxyService,
+      ],
+      imports: [TranslateModule.forRoot()],
     });
     service = TestBed.inject(MainService);
     TestBed.inject(ApiPathProxyService);
+
+    spyOn(service['apiPathProxyService'], 'getAPIPath').and.returnValue(
+      'mocked/api/path'
+    );
   });
 
   it('should be created', () => {

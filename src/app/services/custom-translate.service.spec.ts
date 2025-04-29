@@ -1,18 +1,14 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TranslateService } from '@ngx-translate/core';
-
-import { TranslateServiceMock } from '../mocks/services/translate-mock.service';
 import { CustomTranslateService } from './custom-translate.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('IdentificationService', () => {
   let service: CustomTranslateService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [
-        { provide: TranslateService, useClass: TranslateServiceMock },
-      ],
+      imports: [TranslateModule.forRoot()],
     });
     service = TestBed.inject(CustomTranslateService);
   });

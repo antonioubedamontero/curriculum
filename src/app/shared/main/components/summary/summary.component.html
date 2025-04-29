@@ -7,5 +7,11 @@
     ></mat-icon>
     {{ "main.summary.title" | translate }}
   </h1>
-  <p class="summary__text">Summary text</p>
+  <p class="summary__text">
+    @if(summaryResource.hasValue()) {
+    <!-- -->
+    <span [innerHTML]="summaryResource.value().summary"></span>
+    <!-- -->
+    }
+  </p>
 </div>

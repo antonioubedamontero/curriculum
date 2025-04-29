@@ -1,10 +1,9 @@
 import { inject, Injectable } from '@angular/core';
-import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 
-import { CustomTranslateService } from './custom-translate.service';
+import { ApiPathProxyService } from './api-path-proxy.service';
 import {
   HabilitiesResponse,
   LanguagesResponse,
@@ -18,51 +17,30 @@ import {
 })
 export class MainService {
   private readonly http = inject(HttpClient);
-  private readonly customTranslateService = inject(CustomTranslateService);
-
-  private readonly baseUrl = environment.apiUrl;
+  private readonly apiPathProxyService = inject(ApiPathProxyService);
 
   getSummary(): Observable<SummaryResponse> {
-    const summaryUrl =
-      this.customTranslateService.currentLang() === 'es'
-        ? environment.summaryApiEsUrl
-        : environment.summaryApiEnUrl;
-    return this.http.get<SummaryResponse>(`${this.baseUrl}/${summaryUrl}`);
+    const path = this.apiPathProxyService.getAPIPath('summary');
+    return this.http.get<SummaryResponse>(path);
   }
 
   getHabilities(): Observable<HabilitiesResponse> {
-    const habilitiesUrl =
-      this.customTranslateService.currentLang() === 'es'
-        ? environment.habilitiesApiEsUrl
-        : environment.habilitiesApiEnUrl;
-    return this.http.get<HabilitiesResponse>(
-      `${this.baseUrl}/${habilitiesUrl}`
-    );
+    const path = this.apiPathProxyService.getAPIPath('habilities');
+    return this.http.get<HabilitiesResponse>(path);
   }
 
   getTrainings(): Observable<TrainingsResponse> {
-    const trainingsUrl =
-      this.customTranslateService.currentLang() === 'es'
-        ? environment.trainingsApiEsUrl
-        : environment.trainingsApiEnUrl;
-    return this.http.get<TrainingsResponse>(`${this.baseUrl}/${trainingsUrl}`);
+    const path = this.apiPathProxyService.getAPIPath('trainings');
+    return this.http.get<TrainingsResponse>(path);
   }
 
   getLanguages(): Observable<LanguagesResponse> {
-    const languagesUrl =
-      this.customTranslateService.currentLang() === 'es'
-        ? environment.languagesApiEsUrl
-        : environment.languagesApiEnUrl;
-    return this.http.get<LanguagesResponse>(`${this.baseUrl}/${languagesUrl}`);
+    const path = this.apiPathProxyService.getAPIPath('languages');
+    return this.http.get<LanguagesResponse>(path);
   }
 
   getDeveloperWorkExperiences(): Observable<WorkExperiencesResponse> {
-    const developerWorkExperiencesUrl =
-      this.customTranslateService.currentLang() === 'es'
-        ? environment.workExperiencesEsUrl
-        : environment.workExperiencesEnUrl;
-    return this.http.get<WorkExperiencesResponse>(
-      `${this.baseUrl}/${developerWorkExperiencesUrl}`
-    );
+    const path = this.apiPathProxyService.getAPIPath('workExperiences');
+    return this.http.get<WorkExperiencesResponse>(path);
   }
 }

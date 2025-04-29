@@ -3,23 +3,16 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 import { IdentificationService } from './identification.service';
-import { CustomTranslateService } from './custom-translate.service';
-import { CustomTranslateMockService } from '../mocks/services/custom-translate-mock.service';
+import { ApiPathProxyService } from './api-path-proxy.service';
 
 describe('IdentificationService', () => {
   let service: IdentificationService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [
-        {
-          provide: CustomTranslateService,
-          useClass: CustomTranslateMockService,
-        },
-        provideHttpClient(),
-        provideHttpClientTesting(),
-      ],
+      providers: [provideHttpClient(), provideHttpClientTesting()],
     });
+    TestBed.inject(ApiPathProxyService);
     service = TestBed.inject(IdentificationService);
   });
 

@@ -3,8 +3,8 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 import { IdentificationService } from './identification.service';
-import { CustomTranslateService } from './custom-translate.service';
-import { CustomTranslateMockService } from '../mocks/services/custom-translate-mock.service';
+import { ApiPathProxyService } from './api-path-proxy.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('IdentificationService', () => {
   let service: IdentificationService;
@@ -12,15 +12,18 @@ describe('IdentificationService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        {
-          provide: CustomTranslateService,
-          useClass: CustomTranslateMockService,
-        },
         provideHttpClient(),
         provideHttpClientTesting(),
+        ApiPathProxyService,
       ],
+      imports: [TranslateModule.forRoot()],
     });
+    TestBed.inject(ApiPathProxyService);
     service = TestBed.inject(IdentificationService);
+
+    spyOn(service['apiPathProxyService'], 'getAPIPath').and.returnValue(
+      'mocked/api/path'
+    );
   });
 
   it('should be created', () => {

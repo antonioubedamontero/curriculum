@@ -1,10 +1,11 @@
+import { convertToParamMap } from '@angular/router';
+
 import { of } from 'rxjs';
 
-export const mockActivatedRoute = {
-  snapshot: {
-    paramMap: {
-      get: (key: string) => 'es',
-    },
-  },
-  queryParams: of({}),
-};
+export class ActivatedRouteMock {
+  public paramMap = of(
+    convertToParamMap({
+      lang: 'es',
+    })
+  );
+}

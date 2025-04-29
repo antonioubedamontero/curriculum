@@ -5,6 +5,8 @@ import { provideTranslateService, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppComponent } from './app.component';
+import { CustomTranslateService } from './services/custom-translate.service';
+import { CustomTranslateMockService } from './mocks/services/custom-translate-mock.service';
 
 const httpLoaderFactory: (http: HttpClient) => TranslateHttpLoader = (
   http: HttpClient
@@ -15,6 +17,10 @@ describe('AppComponent', () => {
     await TestBed.configureTestingModule({
       imports: [AppComponent],
       providers: [
+        {
+          provide: CustomTranslateService,
+          useClass: CustomTranslateMockService,
+        },
         provideHttpClient(withFetch()),
         provideTranslateService({
           loader: {

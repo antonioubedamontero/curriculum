@@ -10,5 +10,37 @@
   },
   "footer": {
     "title": "Redes sociales: "
+  },
+  "main": {
+    "summary": {
+      "title": "Resumen",
+      "aria": {
+        "title": "icono de libro"
+      }
+    },
+    "habilities": {
+      "title": "Conocimiento",
+      "aria": {
+        "title": "icono de bombilla"
+      }
+    },
+    "training": {
+      "title": "Formación",
+      "aria": {
+        "title": "icono de birrete"
+      }
+    },
+    "work-experience": {
+      "title": "Experiencia laboral",
+      "aria": {
+        "title": "icono de maletín"
+      }
+    },
+    "languages": {
+      "title": "Idiomas",
+      "aria": {
+        "title": "icono de globo terrestre"
+      }
+    }
   }
 }

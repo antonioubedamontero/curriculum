@@ -5,6 +5,7 @@
   @include page-general($aside-color, white);
   display: flex;
   flex-direction: column;
+  padding-inline: 0;
 
   &__candidate-photo {
     width: 10rem;
@@ -13,8 +14,7 @@
 
   &__title {
     /* Irrelevant in HTML but required for SEO */
-    visibility: hidden;
-    font-size: 0.5rem;
+    @include visually-hidden;
   }
 
   @media (min-width: 600px) {

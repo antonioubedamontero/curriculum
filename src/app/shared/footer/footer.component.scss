@@ -4,14 +4,11 @@
 .footer {
   @include page-general($footer-color, white);
   text-align: center;
-  padding: 0;
   margin: 0 auto;
 
   &__title {
     /* Irrelevant in HTML but required for SEO */
-    visibility: hidden;
-    font-size: 0.5rem;
-    margin: 0;
+    @include visually-hidden;
   }
 
   &__copyright {
@@ -39,6 +36,7 @@
   }
 
   &__label {
-    visibility: hidden;
+    /* Irrelevant in HMTL but required for SEO */
+    @include visually-hidden;
   }
 }

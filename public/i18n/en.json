@@ -10,5 +10,37 @@
   },
   "footer": {
     "title": "Social networks: "
+  },
+  "main": {
+    "summary": {
+      "title": "Summary",
+      "aria": {
+        "title": "book icon"
+      }
+    },
+    "habilities": {
+      "title": "Habilities",
+      "aria": {
+        "title": "light bulb icon"
+      }
+    },
+    "training": {
+      "title": "Training",
+      "aria": {
+        "title": "school icon"
+      }
+    },
+    "work-experience": {
+      "title": "Work Experience",
+      "aria": {
+        "title": "briefcase icon"
+      }
+    },
+    "languages": {
+      "title": "Languages",
+      "aria": {
+        "title": "Globe icon"
+      }
+    }
   }
 }

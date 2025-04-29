@@ -1,0 +1,7 @@
+@use "styles/mixins" as *;
+
+.habilities {
+  &__title {
+    @include header2;
+  }
+}

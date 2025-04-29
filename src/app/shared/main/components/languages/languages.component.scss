@@ -1,0 +1,7 @@
+@use "styles/mixins" as *;
+
+.languages {
+  &__title {
+    @include header2;
+  }
+}

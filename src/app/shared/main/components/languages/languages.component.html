@@ -7,5 +7,11 @@
     ></mat-icon>
     {{ "main.languages.title" | translate }}
   </h1>
-  <p class="languages__text">languages text</p>
+  <ul class="languages-list">
+    @for (language of languages(); track language) {
+    <!-- -->
+    <li [innerHTML]="language"></li>
+    <!-- -->
+    }
+  </ul>
 </div>

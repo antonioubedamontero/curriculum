@@ -7,5 +7,11 @@
     ></mat-icon>
     {{ "main.training.title" | translate }}
   </h1>
-  <p class="training__text">Training text</p>
+  <ul class="training-list">
+    @for (training of trainings(); track training) {
+    <!-- -->
+    <li [innerHTML]="training"></li>
+    <!-- -->
+    }
+  </ul>
 </div>

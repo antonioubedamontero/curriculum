@@ -1,4 +1,9 @@
-import { Component, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+} from '@angular/core';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -11,6 +16,7 @@ import { MainService } from '../../../../services/main.service';
   imports: [TranslatePipe, MatIconModule],
   templateUrl: './summary.component.html',
   styleUrl: './summary.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SummaryComponent {
   mainService = inject(MainService);
@@ -19,4 +25,6 @@ export class SummaryComponent {
     request: () => ({}),
     loader: ({ request }) => this.mainService.getSummary(),
   });
+
+  summary = computed(() => this.summaryResource.value()?.summary);
 }

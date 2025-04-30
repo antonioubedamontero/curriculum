@@ -1,4 +1,12 @@
 {
+  "SEO": {
+    "title": "Desarrollador Web Frontend",
+    "metaTags": {
+      "author": "Antonio Úbeda Montero",
+      "description": "¿Buscas un Desarrollador Web Angular 👨‍💻? ¡No sigas buscando! Colaboremos 🤝.",
+      "keywords": "HTML5, CSS3, Javascript, Typescript, Angular, Jasmine, Karma, Patrones de diseño, Clean code, rxjs"
+    }
+  },
   "aside": {
     "title": "Información de contacto:",
     "email": "Email: ",

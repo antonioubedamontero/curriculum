@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { rxResource, toSignal } from '@angular/core/rxjs-interop';
 
 import { map, tap } from 'rxjs/operators';
@@ -15,6 +15,7 @@ import { IdentificationService } from '../../services/identification.service';
   imports: [AsideComponent, FooterComponent, HeaderComponent, MainComponent],
   templateUrl: './curriculum.component.html',
   styleUrl: './curriculum.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CurriculumComponent {
   private readonly activatedRoute = inject(ActivatedRoute);

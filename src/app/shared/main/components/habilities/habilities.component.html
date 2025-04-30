@@ -7,5 +7,11 @@
     ></mat-icon>
     {{ "main.habilities.title" | translate }}
   </h1>
-  <p class="summary__text">Habilities text</p>
+  <ul class="habilities-list">
+    @for (hability of habilities(); track hability) {
+    <!-- -->
+    <li [innerHTML]="hability"></li>
+    <!-- -->
+    }
+  </ul>
 </div>

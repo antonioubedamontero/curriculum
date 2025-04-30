@@ -1,14 +1,27 @@
 import { TestBed } from '@angular/core/testing';
+import { Meta, Title } from '@angular/platform-browser';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+
+import { TranslateService } from '@ngx-translate/core';
 
 import { CustomTranslateService } from './custom-translate.service';
-import { TranslateModule } from '@ngx-translate/core';
+import { TitleMockService } from '../mocks/services/title-service.mock';
+import { MetaMockService } from '../mocks/services/meta-service.mock';
+import { TranslateMockService } from '../mocks/services/translate-service.mock';
 
-describe('IdentificationService', () => {
+describe('CustomTranslateService', () => {
   let service: CustomTranslateService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [TranslateModule.forRoot()],
+      providers: [
+        provideHttpClient(),
+        provideHttpClientTesting(),
+        { provide: TranslateService, useClass: TranslateMockService },
+        { provide: Title, useClass: TitleMockService },
+        { provide: Meta, useClass: MetaMockService },
+      ],
     });
     service = TestBed.inject(CustomTranslateService);
   });

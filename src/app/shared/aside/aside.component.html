@@ -1,7 +1,10 @@
 <aside class="aside">
   <img
     class="aside__candidate-photo"
-    src="images/photo-cv.jpg"
+    loading="lazy"
+    width="160"
+    height="235"
+    [src]="photoUrl()"
     [alt]="'aside.alt.candidate' | translate"
   />
 

@@ -1,4 +1,12 @@
 {
+  "SEO": {
+    "title": "Frontend Web Developer",
+    "metaTags": {
+      "author": "Antonio Úbeda Montero",
+      "description": "Looking for an Angular Web Developer 👨‍💻? Look no further! Let's work together 🤝.",
+      "keywords": "HTML5, CSS3, Javascript, Typescript, Angular, Jasmine, Karma, Design Patterns, Clean Code, rxjs"
+    }
+  },
   "aside": {
     "title": "Contact information:",
     "email": "Email:",

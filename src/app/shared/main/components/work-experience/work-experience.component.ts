@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
@@ -8,5 +8,6 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [MatIconModule, TranslateModule],
   templateUrl: './work-experience.component.html',
   styleUrl: './work-experience.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WorkExperienceComponent {}

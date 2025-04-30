@@ -15,13 +15,6 @@
     /* Irrelevant in HTML but required for SEO */
     @include visually-hidden;
   }
-
-  @media (min-width: 600px) {
-    /* sm */
-    &__candidate-photo {
-      width: unset;
-    }
-  }
 }
 
 .contact-info {

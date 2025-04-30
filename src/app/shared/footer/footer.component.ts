@@ -1,4 +1,9 @@
-import { Component, computed, input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  input,
+} from '@angular/core';
 
 import { IdentificationResponse, NetworkItem } from '../../interfaces';
 
@@ -9,6 +14,7 @@ import { TranslatePipe } from '@ngx-translate/core';
   imports: [TranslatePipe],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FooterComponent {
   identificationResponse = input.required<IdentificationResponse>();

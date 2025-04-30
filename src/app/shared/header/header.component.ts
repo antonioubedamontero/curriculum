@@ -1,4 +1,9 @@
-import { Component, computed, input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  input,
+} from '@angular/core';
 
 import { IdentificationResponse } from '../../interfaces';
 
@@ -7,6 +12,7 @@ import { IdentificationResponse } from '../../interfaces';
   imports: [],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
   identificationResponse = input.required<IdentificationResponse>();

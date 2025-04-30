@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { CustomTranslateService } from './services/custom-translate.service';
@@ -8,12 +8,12 @@ import { CustomTranslateService } from './services/custom-translate.service';
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   customTranslateService = inject(CustomTranslateService);
 
   constructor() {
-    // TODO: Refactor to not use constructor
     this.customTranslateService.initTranslations();
   }
 }

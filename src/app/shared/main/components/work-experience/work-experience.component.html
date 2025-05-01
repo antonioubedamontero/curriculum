@@ -1,4 +1,4 @@
-<section class="work-experience-section">
+<mat-accordion class="work-experience-section">
   <h2 class="work-experience-section__title">
     <mat-icon
       aria-hidden="false"
@@ -10,24 +10,26 @@
 
   @for (categoryKey of workExperienceCategories(); track categoryKey) {
   <!-- -->
-  <article class="work-experience-category">
-    <h3 class="work-experience-category__title">
-      <mat-icon
-        aria-hidden="false"
-        [ariaLabel]="getCategory(categoryKey).sectionAriaTitle"
-        [fontIcon]="getCategory(categoryKey).sectionIcon"
-      ></mat-icon>
-      {{ getCategory(categoryKey).sectionTitle }}
-    </h3>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum quo eos,
-      tenetur, culpa recusandae placeat quae deleniti facere obcaecati commodi
-      est ipsa debitis nobis dolor neque exercitationem omnis, nesciunt ut!
-      Veniam corporis tempora quaerat, mollitia doloremque eveniet. Veritatis
-      repellendus quisquam optio quam? Aut odio, numquam aperiam quo officia
-      velit? Ipsa!
-    </p>
-  </article>
+  <mat-expansion-panel class="work-experience-category">
+    <mat-expansion-panel-header>
+      <h3 class="work-experience-category__title">
+        <mat-icon
+          aria-hidden="false"
+          [ariaLabel]="getCategory(categoryKey).sectionAriaTitle"
+          [fontIcon]="getCategory(categoryKey).sectionIcon"
+        ></mat-icon>
+        {{ getCategory(categoryKey).sectionTitle }}
+      </h3>
+    </mat-expansion-panel-header>
+    <section class="category-work-experiences">
+      @for (workExperience of getCategory(categoryKey).workExperiences; track
+      $index) {
+      <work-experience-item
+        [workExperience]="workExperience"
+      ></work-experience-item>
+      }
+    </section>
+  </mat-expansion-panel>
   <!-- -->
   }
-</section>
+</mat-accordion>

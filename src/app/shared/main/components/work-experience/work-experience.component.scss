@@ -2,15 +2,20 @@
 @use "styles/variables" as *;
 
 .work-experience-section {
+  margin-block: 1rem;
   &__title {
     @include header2;
   }
 }
 
 .work-experience-category {
-  margin-left: 1rem;
+  margin-block: 1rem;
   &__title {
     @include header3;
-    border-bottom: 3px solid $header-color;
   }
+}
+
+.category-work-experiences {
+  padding-block: 1rem;
+  border-top: 3px solid $header-color;
 }

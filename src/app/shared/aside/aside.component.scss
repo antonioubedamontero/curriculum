@@ -10,6 +10,7 @@
     width: 10rem;
     align-self: center;
     margin-block: 1rem;
+    @include boxShadowEffect(grey, 3px);
   }
 
   &__title {

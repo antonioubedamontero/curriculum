@@ -4,6 +4,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { WorkExperienceItemComponent } from './work-experience-item.component';
+import { signal } from '@angular/core';
+import { workExperienceItemResponseMock1 } from '../../../../../../mocks/data/main-response.mock';
 
 describe('WorkExperienceItemComponent', () => {
   let component: WorkExperienceItemComponent;
@@ -20,6 +22,9 @@ describe('WorkExperienceItemComponent', () => {
 
     fixture = TestBed.createComponent(WorkExperienceItemComponent);
     component = fixture.componentInstance;
+
+    (component.workExperience as any) = signal(workExperienceItemResponseMock1);
+
     fixture.detectChanges();
   });
 

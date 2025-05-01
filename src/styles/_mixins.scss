@@ -38,3 +38,9 @@
   align-items: center;
   gap: 0.8rem;
 }
+
+@mixin boxShadowEffect($color, $size) {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  box-shadow: $size $size $color;
+}

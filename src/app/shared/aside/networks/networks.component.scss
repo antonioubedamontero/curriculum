@@ -9,8 +9,7 @@
   background-color: white;
   padding: 1rem;
   margin: 0;
-  border: 1px solid grey;
-  border-radius: 10px;
+  @include boxShadowEffect(grey, 3px);
 }
 
 .networks-list-item {

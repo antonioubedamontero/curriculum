@@ -2,11 +2,17 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
+  effect,
   inject,
+  viewChildren,
 } from '@angular/core';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { MatIconModule } from '@angular/material/icon';
-import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
+import {
+  MatAccordion,
+  MatExpansionModule,
+  MatExpansionPanel,
+} from '@angular/material/expansion';
 
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -28,6 +34,8 @@ import { WorkExperienceItemComponent } from './work-experience-item/work-experie
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WorkExperiencesComponent {
+  expansionPanelsRef = viewChildren<MatExpansionPanel>('expansionPanels');
+
   mainService = inject(MainService);
 
   getDeveloperWorkExperiencesResource = rxResource({
@@ -40,6 +48,12 @@ export class WorkExperiencesComponent {
   workExperienceCategories = computed(() =>
     Object.keys(this.workExperienceResponse())
   );
+
+  private readonly workExperienceCategoriesEffect = effect(() => {
+    const lastExperience = this.expansionPanelsRef().length - 1;
+    this.expansionPanelsRef()?.at(0)?.open();
+    this.expansionPanelsRef()?.at(lastExperience)?.open();
+  });
 
   getCategory(key: string): WorkExperienceResponseDetail {
     return this.workExperienceResponse()[key];

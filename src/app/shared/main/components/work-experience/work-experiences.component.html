@@ -1,4 +1,4 @@
-<mat-accordion class="work-experience-section">
+<mat-accordion class="work-experience-section" multi>
   <h2 class="work-experience-section__title">
     <mat-icon
       aria-hidden="false"
@@ -11,7 +11,7 @@
   @for (categoryKey of workExperienceCategories(); track categoryKey) {
   <!-- -->
   <article>
-    <mat-expansion-panel class="work-experience-category">
+    <mat-expansion-panel #expansionPanels class="work-experience-category">
       <mat-expansion-panel-header>
         <h3 class="work-experience-category__title">
           <mat-icon

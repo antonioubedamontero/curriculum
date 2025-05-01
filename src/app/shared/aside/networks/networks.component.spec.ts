@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { signal } from '@angular/core';
 
+import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { NetworksComponent } from './networks.component';
@@ -12,7 +13,7 @@ describe('NetworksComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NetworksComponent, TranslateModule.forRoot()],
+      imports: [NetworksComponent, MatIconModule, TranslateModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(NetworksComponent);

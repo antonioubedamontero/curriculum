@@ -9,6 +9,11 @@
 
 .work-experience-item-dates {
   background-color: $header-color !important;
+
+  span {
+    @include header4;
+    color: white !important;
+  }
 }
 
 .work-experience-item-company {

@@ -1,3 +1,5 @@
+@if (companyProjects().length > 1) {
+<!-- more than one project -->
 <ul class="company-projects">
   @for (project of companyProjects(); track $index) {
   <li>
@@ -22,3 +24,30 @@
   </li>
   }
 </ul>
+<!-- only one project -->
+} @else {
+<div class="company-projects-one-project">
+  @for (project of companyProjects(); track $index) {
+  <div>
+    <div clas="company-project-item">
+      <!-- -->
+      @if (project.company) {
+      <!-- -->
+      <h5 class="company-project-item__title">
+        <mat-chip class="company-project-item-dates">
+          <span>{{ project.rangeDates }}</span>
+        </mat-chip>
+        :
+        <span class="company-project-item-company">
+          {{ project.company }}
+        </span>
+      </h5>
+      <!-- -->
+      }
+      <div [innerHTML]="project.description"></div>
+      <!-- -->
+    </div>
+  </div>
+  }
+</div>
+}

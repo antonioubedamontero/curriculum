@@ -5,17 +5,26 @@
   list-style-type: circle;
 }
 
+.company-projects-one-project {
+  padding-left: 1.3rem;
+}
+
 .company-project-item {
   &__title {
     @include header5;
-    padding-top: 0.3rem;
+    padding-top: 0.5rem;
+
+    span {
+      @include header5;
+    }
   }
 }
 
 .company-project-item-dates {
-  background-color: $footer-color !important;
+  background-color: $project-color !important;
+
   span {
-    color: white !important;
+    color: white;
   }
 }
 

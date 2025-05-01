@@ -1,0 +1,32 @@
+@use "styles/mixins" as *;
+
+.networks-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  background-color: white;
+  padding: 1rem;
+  margin: 0;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
+.networks-list-item {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.network-item-anchor {
+  &__image {
+    width: 3rem;
+    height: auto;
+  }
+
+  &__label {
+    /* Irrelevant in HMTL but required for SEO */
+    @include visually-hidden;
+  }
+}

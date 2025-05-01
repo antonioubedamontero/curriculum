@@ -1,0 +1,25 @@
+@use "styles/mixins" as *;
+@use "styles/variables" as *;
+
+.company-projects {
+  list-style-type: circle;
+}
+
+.company-project-item {
+  &__title {
+    @include header5;
+    padding-top: 0.3rem;
+  }
+}
+
+.company-project-item-dates {
+  background-color: $footer-color !important;
+  span {
+    color: white !important;
+  }
+}
+
+.company-project-item-company {
+  padding-block: 0.3rem;
+  border-bottom: 2px solid $header-color;
+}

@@ -12,7 +12,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { MainService } from '../../../../services/main.service';
 import { WorkExperienceResponseDetail } from '../../../../interfaces';
-import { WorkExperienceItemComponent } from './work-experience-item/work-experience-item/work-experience-item.component';
+import { WorkExperienceItemComponent } from './work-experience-item/work-experience-item.component';
 
 @Component({
   selector: 'main-work-experiences',

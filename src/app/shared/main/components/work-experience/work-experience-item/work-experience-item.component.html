@@ -1,0 +1,15 @@
+<div class="work-experience-item">
+  <h4 class="work-experience-item__title">
+    <mat-chip class="work-experience-item-dates">
+      {{ workExperience().rangeDates }}
+    </mat-chip>
+    :
+    <span class="work-experience-item-company">
+      {{ workExperience().company }}
+    </span>
+  </h4>
+
+  <company-projects
+    [companyProjects]="workExperience().projects"
+  ></company-projects>
+</div>

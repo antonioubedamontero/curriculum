@@ -5,17 +5,18 @@
   margin-block: 1rem;
   &__title {
     @include header2;
+    margin-block: 1.2rem;
   }
 }
 
 .work-experience-category {
-  margin-block: 1rem;
+  margin-block: 0.8rem;
   &__title {
     @include header3;
   }
 }
 
 .category-work-experiences {
-  padding-block: 1rem;
+  padding: 1rem 1rem;
   border-top: 3px solid $header-color;
 }

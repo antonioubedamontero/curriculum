@@ -1,11 +1,14 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { WorkExperienceItemResponse } from '../../../../../../interfaces';
 
 import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
+
+import { CompanyProjectsComponent } from '../company-projects/company-projects.component';
+import { WorkExperienceItemResponse } from '../../../../../interfaces';
 
 @Component({
   selector: 'work-experience-item',
-  imports: [MatChipsModule],
+  imports: [CompanyProjectsComponent, MatIconModule, MatChipsModule],
   templateUrl: './work-experience-item.component.html',
   styleUrl: './work-experience-item.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

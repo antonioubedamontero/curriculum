@@ -22,14 +22,16 @@
           {{ getCategory(categoryKey).sectionTitle }}
         </h3>
       </mat-expansion-panel-header>
-      <section class="category-work-experiences">
+      <ul class="category-work-experiences">
         @for (workExperience of getCategory(categoryKey).workExperiences; track
         $index) {
-        <work-experience-item
-          [workExperience]="workExperience"
-        ></work-experience-item>
+        <li>
+          <work-experience-item
+            [workExperience]="workExperience"
+          ></work-experience-item>
+        </li>
         }
-      </section>
+      </ul>
     </mat-expansion-panel>
     <!-- -->
   </article>

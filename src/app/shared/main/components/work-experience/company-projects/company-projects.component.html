@@ -1,0 +1,24 @@
+<ul class="company-projects">
+  @for (project of companyProjects(); track $index) {
+  <li>
+    <div clas="company-project-item">
+      <!-- -->
+      @if (project.company) {
+      <!-- -->
+      <h5 class="company-project-item__title">
+        <mat-chip class="company-project-item-dates">
+          <span>{{ project.rangeDates }}</span>
+        </mat-chip>
+        :
+        <span class="company-project-item-company">
+          {{ project.company }}
+        </span>
+      </h5>
+      <!-- -->
+      }
+      <div [innerHTML]="project.description"></div>
+      <!-- -->
+    </div>
+  </li>
+  }
+</ul>

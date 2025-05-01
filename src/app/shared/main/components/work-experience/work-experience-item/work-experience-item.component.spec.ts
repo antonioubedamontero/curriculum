@@ -1,12 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { signal } from '@angular/core';
+
 import { MatIconModule } from '@angular/material/icon';
 
 import { MatChipsModule } from '@angular/material/chips';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { WorkExperienceItemComponent } from './work-experience-item.component';
-import { signal } from '@angular/core';
-import { workExperienceItemResponseMock1 } from '../../../../../../mocks/data/main-response.mock';
+import { CompanyProjectsComponent } from '../company-projects/company-projects.component';
+import { workExperienceItemResponseMock1 } from '../../../../../mocks/data/main-response.mock';
 
 describe('WorkExperienceItemComponent', () => {
   let component: WorkExperienceItemComponent;
@@ -16,6 +18,7 @@ describe('WorkExperienceItemComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         WorkExperienceItemComponent,
+        CompanyProjectsComponent,
         MatIconModule,
         MatChipsModule,
         TranslateModule.forRoot(),

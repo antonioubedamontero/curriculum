@@ -1,17 +1,21 @@
-<div class="languages">
-  <h1 class="languages__title">
+<section class="languages">
+  <h2 class="languages__title">
     <mat-icon
       aria-hidden="false"
       [ariaLabel]="'main.languages.aria.title' | translate"
       fontIcon="languages"
     ></mat-icon>
     {{ "main.languages.title" | translate }}
-  </h1>
+  </h2>
   <ul class="languages-list">
+    @if (languageResource.hasValue()) {
+    <!-- -->
     @for (language of languages(); track language) {
     <!-- -->
     <li [innerHTML]="language"></li>
     <!-- -->
     }
+    <!-- -->
+    }
   </ul>
-</div>
+</section>

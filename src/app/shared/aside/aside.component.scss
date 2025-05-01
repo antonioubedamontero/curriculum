@@ -9,6 +9,7 @@
   &__candidate-photo {
     width: 10rem;
     align-self: center;
+    margin-block: 1rem;
   }
 
   &__title {
@@ -18,8 +19,9 @@
 }
 
 .contact-info {
+  padding-block: 0.5rem;
+  border-block: 2px solid white;
   list-style: square;
-  margin: 0 auto;
 
   &__item {
     font-size: 1.2rem;

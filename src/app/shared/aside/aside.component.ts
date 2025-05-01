@@ -5,10 +5,11 @@ import {
   input,
   signal,
 } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+
 import { TranslatePipe } from '@ngx-translate/core';
 
 import { IdentificationResponse } from '../../interfaces';
-import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-aside',

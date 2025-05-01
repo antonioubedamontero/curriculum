@@ -1,7 +1,16 @@
 @use "styles/mixins" as *;
+@use "styles/variables" as *;
 
-.work-experience {
+.work-experience-section {
   &__title {
     @include header2;
+  }
+}
+
+.work-experience-category {
+  margin-left: 1rem;
+  &__title {
+    @include header3;
+    border-bottom: 3px solid $header-color;
   }
 }

@@ -5,14 +5,16 @@ import {
   input,
   signal,
 } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+
 import { TranslatePipe } from '@ngx-translate/core';
 
 import { IdentificationResponse } from '../../interfaces';
-import { DomSanitizer } from '@angular/platform-browser';
+import { NetworksComponent } from './networks/networks.component';
 
 @Component({
   selector: 'app-aside',
-  imports: [TranslatePipe],
+  imports: [TranslatePipe, NetworksComponent],
   templateUrl: './aside.component.html',
   styleUrl: './aside.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

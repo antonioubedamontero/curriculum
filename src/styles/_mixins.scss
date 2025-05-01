@@ -1,3 +1,5 @@
+@use "styles/variables" as *;
+
 @mixin page-general($background-color, $font-color: #000) {
   height: 100%;
   background-color: $background-color;
@@ -19,9 +21,38 @@
 
 @mixin header2 {
   font-size: 1.5rem;
-  color: #4895ef;
+  color: $header-color;
   margin-block: 0;
   display: flex;
   align-items: center;
   gap: 0.8rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 5px solid $header-color;
+}
+
+@mixin header3 {
+  font-size: 1.5rem;
+  color: $header-color;
+  margin-block: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+@mixin header4 {
+  font-size: 1.3rem;
+  color: $header-color;
+  margin-block: 1rem;
+}
+
+@mixin header5 {
+  font-size: 1.3rem;
+  color: $header-color;
+  margin-block: 1rem;
+}
+
+@mixin boxShadowEffect($color, $size) {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  box-shadow: $size $size $color;
 }

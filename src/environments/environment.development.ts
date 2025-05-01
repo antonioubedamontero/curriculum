@@ -3,7 +3,7 @@ export const environment = {
   apiUrl: 'https://gist.githubusercontent.com/antonioubedamontero',
   es: {
     identification:
-      '/04eba3c23412315d8d4dac2ba4de9535/raw/00f6827aa1b5f15806262979ed6caae6a408e65a/cv-identification-es.json',
+      '/04eba3c23412315d8d4dac2ba4de9535/raw/236d2f1b465d46d95890b7f28e467e4594b5d2ca/cv-identification-es.json',
     summary:
       '/29a81e351a92f3f96226d7c0b1f0db1f/raw/00ea9785e9368d143b616d5e22641a0eea3e1da8/cv-summary-es.json',
     habilities:
@@ -17,7 +17,7 @@ export const environment = {
   },
   en: {
     identification:
-      '/6a67f0836d08813e557214ecc9a9ab6b/raw/6a6ee1dec6f02dcc7246d9b70f7138f2ec36be65/cv-identification-en.json',
+      '/6a67f0836d08813e557214ecc9a9ab6b/raw/5b5e52e13e85e00e43a1e6126a6be53c8f04a7bb/cv-identification-en.json',
     summary:
       '/40e3a264d13d0ba0edfe5c8fa4f9793b/raw/1f3b430e0f0b857b2ba4e0101bc9b76334f27f44/cv-summary-en.json',
     habilities:

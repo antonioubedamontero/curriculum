@@ -1,0 +1,22 @@
+@use "styles/mixins" as *;
+@use "styles/variables" as *;
+
+.work-experience-item {
+  &__title {
+    @include header4;
+  }
+}
+
+.work-experience-item-dates {
+  background-color: $header-color !important;
+
+  span {
+    @include header4;
+    color: white !important;
+  }
+}
+
+.work-experience-item-company {
+  padding-bottom: 0.1rem;
+  border-bottom: 2px solid $header-color;
+}

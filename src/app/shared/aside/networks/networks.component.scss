@@ -1,0 +1,35 @@
+@use "styles/mixins" as *;
+
+.networks-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 1rem;
+  margin: 0;
+  @include boxShadowEffect(grey, 3px);
+  height: 6.21rem;
+}
+
+.networks-list-item {
+  cursor: pointer;
+}
+
+.network-item-anchor {
+  &__image {
+    width: 2.8rem;
+    height: auto;
+    transition: 300ms;
+  }
+
+  &__image:hover {
+    width: 3.5rem;
+  }
+
+  &__label {
+    /* Irrelevant in HMTL but required for SEO */
+    @include visually-hidden;
+  }
+}

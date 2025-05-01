@@ -1,4 +1,4 @@
-export interface workExperienceResponseDetail {
+export interface WorkExperienceResponseDetail {
   sectionTitle: string;
   sectionIcon: string;
   sectionAriaTitle: string;
@@ -6,7 +6,7 @@ export interface workExperienceResponseDetail {
 }
 
 export interface WorkExperiencesResponse {
-  [sectionName: string]: workExperienceResponseDetail;
+  [sectionName: string]: WorkExperienceResponseDetail;
 }
 
 export interface WorkExperienceItemResponse {

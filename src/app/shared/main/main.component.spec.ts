@@ -21,11 +21,11 @@ export class HabilitiesMockComponent {}
 export class TrainingMockComponent {}
 
 @Component({
-  selector: 'main-work-experience',
+  selector: 'main-work-experiences',
   imports: [],
   template: `<p>Main-work-experience</p>`,
 })
-export class WorkExperienceMockComponent {}
+export class WorkExperiencesnMockComponent {}
 
 @Component({
   selector: 'main-languages',
@@ -53,7 +53,7 @@ describe('MainComponent', () => {
         SummaryMockComponent,
         HabilitiesMockComponent,
         TrainingMockComponent,
-        WorkExperienceMockComponent,
+        WorkExperiencesnMockComponent,
         LanguagesMockComponent,
         TranslateModule.forRoot(),
       ],

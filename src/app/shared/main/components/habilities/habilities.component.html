@@ -1,17 +1,21 @@
-<div class="habilities">
-  <h1 class="habilities__title">
+<section class="habilities">
+  <h2 class="habilities__title">
     <mat-icon
       aria-hidden="false"
       [ariaLabel]="'main.habilities.aria.title' | translate"
       fontIcon="tips_and_updates"
     ></mat-icon>
     {{ "main.habilities.title" | translate }}
-  </h1>
+  </h2>
   <ul class="habilities-list">
+    @if (habilitiesResource.hasValue()) {
+    <!-- -->
     @for (hability of habilities(); track hability) {
     <!-- -->
     <li [innerHTML]="hability"></li>
     <!-- -->
     }
+    <!-- -->
+    }
   </ul>
-</div>
+</section>

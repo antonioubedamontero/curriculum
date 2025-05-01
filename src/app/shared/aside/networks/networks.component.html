@@ -1,0 +1,24 @@
+<nav class="networks">
+  <ul class="networks-list">
+    @for (network of networks(); track network.label) {
+    <li class="networks-list-item">
+      <a
+        [href]="network.url"
+        [attr.target]="network.shouldDownLoad ? null : '_blank'"
+        [attr.download]="network.shouldDownLoad ? 'curriculum' : null"
+        class="network-item-anchor"
+      >
+        <img
+          class="network-item-anchor__image"
+          loading="lazy"
+          width="48"
+          height="48"
+          [src]="network.icon"
+          [alt]="network.ariaLabel"
+        />
+        <span class="network-item-anchor__label">{{ network.label }}</span>
+      </a>
+    </li>
+    }
+  </ul>
+</nav>

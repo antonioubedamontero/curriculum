@@ -4,6 +4,7 @@
 .header {
   @include page-general($header-color, white);
   text-align: center;
+  border-bottom: 1px solid lightgrey;
 
   &__name-and-surname {
     font-size: 2rem;

@@ -1,8 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideHttpClient, withFetch } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+
 import { MatIconModule } from '@angular/material/icon';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { WorkExperienceComponent } from './work-experience.component';
-import { TranslateModule } from '@ngx-translate/core';
+
+import { MainService } from '../../../../services/main.service';
+import { MainMockService } from '../../../../mocks/services/main-mock.service';
 
 describe('WorkExperienceComponent', () => {
   let component: WorkExperienceComponent;
@@ -10,6 +16,14 @@ describe('WorkExperienceComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      providers: [
+        provideHttpClient(withFetch()),
+        provideHttpClientTesting,
+        {
+          provide: MainService,
+          useClass: MainMockService,
+        },
+      ],
       imports: [
         WorkExperienceComponent,
         MatIconModule,

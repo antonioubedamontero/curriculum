@@ -5,7 +5,7 @@ import {
   SummaryResponse,
   TrainingsResponse,
   WorkExperienceItemResponse,
-  workExperienceResponseDetail,
+  WorkExperienceResponseDetail,
   WorkExperiencesResponse,
 } from '../../interfaces';
 
@@ -52,7 +52,7 @@ export const workExperienceItemResponseMock2: WorkExperienceItemResponse = {
   projects: [projectItemResponseWithoutProjectAndRangesMock],
 };
 
-export const workExperienceResponseDetailMock: workExperienceResponseDetail = {
+export const workExperienceResponseDetailMock: WorkExperienceResponseDetail = {
   sectionTitle: 'work section title mock',
   sectionIcon: 'icon section title mock',
   sectionAriaTitle: 'aria section title mock',

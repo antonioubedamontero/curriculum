@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { WorkExperienceComponent } from './work-experience.component';
+import { WorkExperiencesComponent } from './work-experiences.component';
 
 import { MainService } from '../../../../services/main.service';
 import { MainMockService } from '../../../../mocks/services/main-mock.service';
@@ -22,9 +22,9 @@ export class WorkExperienceItemMockComponent {
   workExperienceResponseDetail = input.required<WorkExperienceResponseDetail>();
 }
 
-describe('WorkExperienceComponent', () => {
-  let component: WorkExperienceComponent;
-  let fixture: ComponentFixture<WorkExperienceComponent>;
+describe('WorkExperiencesComponent', () => {
+  let component: WorkExperiencesComponent;
+  let fixture: ComponentFixture<WorkExperiencesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -37,7 +37,7 @@ describe('WorkExperienceComponent', () => {
         },
       ],
       imports: [
-        WorkExperienceComponent,
+        WorkExperiencesComponent,
         WorkExperienceItemMockComponent,
         MatIconModule,
         MatAccordion,
@@ -46,7 +46,7 @@ describe('WorkExperienceComponent', () => {
       ],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(WorkExperienceComponent);
+    fixture = TestBed.createComponent(WorkExperiencesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

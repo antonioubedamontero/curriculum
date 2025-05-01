@@ -1,0 +1,37 @@
+<mat-accordion class="work-experience-section">
+  <h2 class="work-experience-section__title">
+    <mat-icon
+      aria-hidden="false"
+      [ariaLabel]="'main.work-experience.aria.title' | translate"
+      fontIcon="work"
+    ></mat-icon>
+    {{ "main.work-experience.title" | translate }}
+  </h2>
+
+  @for (categoryKey of workExperienceCategories(); track categoryKey) {
+  <!-- -->
+  <article>
+    <mat-expansion-panel class="work-experience-category">
+      <mat-expansion-panel-header>
+        <h3 class="work-experience-category__title">
+          <mat-icon
+            aria-hidden="false"
+            [ariaLabel]="getCategory(categoryKey).sectionAriaTitle"
+            [fontIcon]="getCategory(categoryKey).sectionIcon"
+          ></mat-icon>
+          {{ getCategory(categoryKey).sectionTitle }}
+        </h3>
+      </mat-expansion-panel-header>
+      <section class="category-work-experiences">
+        @for (workExperience of getCategory(categoryKey).workExperiences; track
+        $index) {
+        <work-experience-item
+          [workExperience]="workExperience"
+        ></work-experience-item>
+        }
+      </section>
+    </mat-expansion-panel>
+    <!-- -->
+  </article>
+  }
+</mat-accordion>

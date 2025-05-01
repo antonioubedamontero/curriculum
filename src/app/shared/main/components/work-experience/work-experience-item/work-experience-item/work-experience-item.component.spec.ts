@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatIconModule } from '@angular/material/icon';
 
+import { MatChipsModule } from '@angular/material/chips';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { WorkExperienceItemComponent } from './work-experience-item.component';
@@ -16,6 +17,7 @@ describe('WorkExperienceItemComponent', () => {
       imports: [
         WorkExperienceItemComponent,
         MatIconModule,
+        MatChipsModule,
         TranslateModule.forRoot(),
       ],
     }).compileComponents();

@@ -15,7 +15,7 @@ import { WorkExperienceResponseDetail } from '../../../../interfaces';
 import { WorkExperienceItemComponent } from './work-experience-item/work-experience-item/work-experience-item.component';
 
 @Component({
-  selector: 'main-work-experience',
+  selector: 'main-work-experiences',
   imports: [
     WorkExperienceItemComponent,
     MatIconModule,
@@ -23,11 +23,11 @@ import { WorkExperienceItemComponent } from './work-experience-item/work-experie
     MatExpansionModule,
     TranslateModule,
   ],
-  templateUrl: './work-experience.component.html',
-  styleUrl: './work-experience.component.scss',
+  templateUrl: './work-experiences.component.html',
+  styleUrl: './work-experiences.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class WorkExperienceComponent {
+export class WorkExperiencesComponent {
   mainService = inject(MainService);
 
   getDeveloperWorkExperiencesResource = rxResource({

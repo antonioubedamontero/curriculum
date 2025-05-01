@@ -5,6 +5,7 @@
   @include page-general($aside-color, white);
   display: flex;
   flex-direction: column;
+  border-right: 2px solid lightgrey;
 
   &__candidate-photo {
     width: 10rem;
@@ -20,8 +21,6 @@
 }
 
 .contact-info {
-  padding-top: 0.5rem;
-  border-top: 2px solid white;
   list-style: square;
 
   &__item {

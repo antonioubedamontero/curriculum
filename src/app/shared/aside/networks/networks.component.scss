@@ -5,23 +5,28 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
   background-color: white;
   padding: 1rem;
   margin: 0;
   @include boxShadowEffect(grey, 3px);
+  height: 6.21rem;
 }
 
 .networks-list-item {
-  display: flex;
-  flex-direction: column;
   cursor: pointer;
 }
 
 .network-item-anchor {
   &__image {
-    width: 3rem;
+    width: 2.8rem;
     height: auto;
+    transition: 300ms;
+  }
+
+  &__image:hover {
+    width: 3.5rem;
   }
 
   &__label {

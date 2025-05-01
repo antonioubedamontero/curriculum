@@ -1,1 +1,30 @@
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, alias.
+<div class="work-experience-item">
+  <h4 class="work-experience-item__title">
+    <mat-chip class="work-experience-item-dates">
+      {{ workExperience().rangeDates }}
+    </mat-chip>
+    :
+    <span class="work-experience-item-company">
+      {{ workExperience().company }}
+    </span>
+  </h4>
+  <div class="work-experience-item-projects">
+    @if (workExperience().projects.length == 1) {
+    <!-- -->
+    @if (workExperience().projects[0].company) {
+    <h5 class="work-experience-item-projects__title">
+      <mat-chip class="work-experience-item-projects-dates">
+        {{ workExperience().projects[0].rangeDates }}
+      </mat-chip>
+      :
+      <span class="work-experience-item-projects-company">
+        {{ workExperience().projects[0].company }}
+      </span>
+    </h5>
+    }
+
+    <p [innerHTML]="workExperience().projects[0].description"></p>
+    <!-- -->
+    }
+  </div>
+</div>

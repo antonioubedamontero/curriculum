@@ -3,8 +3,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { SummaryComponent } from './components/summary/summary.component';
 import { HabilitiesComponent } from './components/habilities/habilities.component';
 import { TrainingComponent } from './components/training/training.component';
-import { WorkExperienceComponent } from './components/work-experience/work-experience.component';
 import { LanguagesComponent } from './components/languages/languages.component';
+import { WorkExperiencesComponent } from './components/work-experience/work-experiences.component';
 
 @Component({
   selector: 'app-main',
@@ -12,7 +12,7 @@ import { LanguagesComponent } from './components/languages/languages.component';
     SummaryComponent,
     HabilitiesComponent,
     TrainingComponent,
-    WorkExperienceComponent,
+    WorkExperiencesComponent,
     LanguagesComponent,
   ],
   templateUrl: './main.component.html',

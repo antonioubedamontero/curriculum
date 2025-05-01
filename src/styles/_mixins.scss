@@ -39,6 +39,18 @@
   gap: 0.8rem;
 }
 
+@mixin header4 {
+  font-size: 1.5rem;
+  color: $header-color;
+  margin-block: 1rem;
+}
+
+@mixin header5 {
+  font-size: 1.5rem;
+  color: $header-color;
+  margin-block: 1rem;
+}
+
 @mixin boxShadowEffect($color, $size) {
   border: 1px solid lightgray;
   border-radius: 10px;

@@ -23,11 +23,4 @@ export class AsideComponent {
   sanitizer = inject(DomSanitizer);
 
   identificationResponse = input.required<IdentificationResponse>();
-
-  photoUrl = signal(
-    // TODO: Fix this in source
-    this.sanitizer.bypassSecurityTrustUrl(
-      'https://raw.githubusercontent.com/antonioubedamontero/curriculum-data/main/photo-cv.jpg'
-    )
-  );
 }

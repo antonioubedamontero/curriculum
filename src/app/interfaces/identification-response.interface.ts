@@ -6,6 +6,7 @@ export interface IdentificationResponse {
   phone: string;
   email: string;
   provinceCountry: string;
+  photoUrl: string;
   netWorks: NetworkItem[];
 }
 

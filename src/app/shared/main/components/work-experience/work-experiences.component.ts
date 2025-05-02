@@ -4,6 +4,7 @@ import {
   computed,
   effect,
   inject,
+  untracked,
   viewChildren,
 } from '@angular/core';
 import { rxResource } from '@angular/core/rxjs-interop';
@@ -19,6 +20,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MainService } from '../../../../services/main.service';
 import { WorkExperienceResponseDetail } from '../../../../interfaces';
 import { WorkExperienceItemComponent } from './work-experience-item/work-experience-item.component';
+import {
+  WorkExpansionOpenPanelState,
+  WorkExperienceExpasionPanelService,
+} from '../../../../services/work-experience-expasion-panel.service';
 
 @Component({
   selector: 'main-work-experiences',
@@ -36,6 +41,9 @@ import { WorkExperienceItemComponent } from './work-experience-item/work-experie
 export class WorkExperiencesComponent {
   expansionPanelsRef = viewChildren<MatExpansionPanel>('expansionPanels');
 
+  workExperienceExpansionPanelService = inject(
+    WorkExperienceExpasionPanelService
+  );
   mainService = inject(MainService);
 
   getDeveloperWorkExperiencesResource = rxResource({
@@ -49,13 +57,36 @@ export class WorkExperiencesComponent {
     Object.keys(this.workExperienceResponse())
   );
 
-  private readonly workExperienceCategoriesEffect = effect(() => {
-    const lastExperience = this.expansionPanelsRef().length - 1;
-    this.expansionPanelsRef()?.at(0)?.open();
-    this.expansionPanelsRef()?.at(lastExperience)?.open();
+  private readonly loadExpansionPanelffect = effect(() => {
+    if (this.expansionPanelsRef().length > 0) {
+      untracked(() => {
+        this.workExperienceExpansionPanelService.openState.set(
+          WorkExpansionOpenPanelState.initial
+        );
+      });
+    }
+  });
+
+  private readonly workExperienceExpansionPanelChangeEffect = effect(() => {
+    const newOpenState = this.workExperienceExpansionPanelService.openState();
+    this.changeOpenStatePanel(newOpenState);
   });
 
   getCategory(key: string): WorkExperienceResponseDetail {
     return this.workExperienceResponse()[key];
+  }
+
+  changeOpenStatePanel(state: WorkExpansionOpenPanelState) {
+    if (state === WorkExpansionOpenPanelState.unset) return;
+
+    if (state === WorkExpansionOpenPanelState.initial) {
+      const lastExperience = this.expansionPanelsRef().length - 1;
+      this.expansionPanelsRef()?.at(0)?.open();
+      this.expansionPanelsRef()?.at(lastExperience)?.open();
+    }
+
+    if (state === WorkExpansionOpenPanelState.all) {
+      this.expansionPanelsRef().forEach((panel) => panel.open());
+    }
   }
 }

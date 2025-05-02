@@ -23,4 +23,5 @@ export const identificationResponseMock: IdentificationResponse = {
   email: 'mock email',
   provinceCountry: 'mock provice, country',
   netWorks: [networkItem, networkItem],
+  photoUrl: 'http://mock-photo.jpg',
 };

@@ -1,3 +1,4 @@
+import { DOCUMENT } from '@angular/common';
 import { inject, Injectable, signal } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
@@ -17,6 +18,7 @@ export class CustomTranslateService {
   translate = inject(TranslateService);
   titleService = inject(Title);
   metaService = inject(Meta);
+  document = inject(DOCUMENT);
 
   currentLang = signal(this.translate.currentLang);
 
@@ -25,18 +27,19 @@ export class CustomTranslateService {
     this.translate.setDefaultLang(lang);
     this.translate.use(lang);
     this.currentLang.set(lang);
-    this.setSEO();
+    this.setSEO(lang);
   }
 
   chageLanguage(lang = defaultLang) {
     const newLang = availableLangs.includes(lang) ? lang : defaultLang;
     this.translate.use(newLang);
     this.currentLang.set(newLang);
-    this.setSEO();
+    this.setSEO(newLang);
   }
 
-  private setSEO(): void {
+  private setSEO(lang: string): void {
     this.translate.get('SEO').subscribe((SEO) => {
+      this.document.documentElement.setAttribute('lang', lang);
       this.setSEOTitle(SEO.title);
       this.setSEOMetaTags(SEO.metaTags);
     });

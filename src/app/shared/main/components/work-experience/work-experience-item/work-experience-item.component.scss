@@ -4,6 +4,7 @@
 .work-experience-item {
   &__title {
     @include header4;
+    margin-bottom: 0;
   }
 }
 

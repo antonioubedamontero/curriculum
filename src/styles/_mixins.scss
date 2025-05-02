@@ -31,24 +31,23 @@
 }
 
 @mixin header3 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: $header-color;
-  margin-block: 1rem;
   display: flex;
   align-items: center;
   gap: 0.8rem;
 }
 
 @mixin header4 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: $header-color;
-  margin-block: 1rem;
+  margin-block: 0.7rem;
 }
 
 @mixin header5 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: $header-color;
-  margin-block: 1rem;
+  margin-block: 0.7rem;
 }
 
 @mixin boxShadowEffect($color, $size) {

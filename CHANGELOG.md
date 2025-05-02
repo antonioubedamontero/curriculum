@@ -2,6 +2,10 @@
 
 Changelog project
 
+## [1.0.2] - 2025-05-02
+
+- Added robots.txt.
+
 ## [1.0.1] - 2025-05-02
 
 - Fix some styles.

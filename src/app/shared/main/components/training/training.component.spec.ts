@@ -8,6 +8,7 @@ import { TrainingComponent } from './training.component';
 import { MainService } from '../../../../services/main.service';
 import { MainMockService } from '../../../../mocks/services/main-mock.service';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { signal } from '@angular/core';
 
 describe('TrainingComponent', () => {
   let component: TrainingComponent;
@@ -28,6 +29,9 @@ describe('TrainingComponent', () => {
 
     fixture = TestBed.createComponent(TrainingComponent);
     component = fixture.componentInstance;
+
+    (component.lang as any) = signal('es');
+
     fixture.detectChanges();
   });
 

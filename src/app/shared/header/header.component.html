@@ -1,6 +1,41 @@
 <header class="header">
-  <strong class="header__name-and-surname">{{ this.nameAndSurname() }}</strong>
-  <h1 class="header__role">
-    <em>{{ this.role() }}</em>
-  </h1>
+  <div class="header__angular-logo">
+    <img
+      width="80px"
+      height="80px"
+      src="images/angular-logo.png"
+      alt="angular logo"
+    />
+  </div>
+
+  <div class="header-data">
+    <strong class="header-data__name-and-surname">{{
+      this.nameAndSurname()
+    }}</strong>
+    <h1 class="header-data__role">
+      <mat-icon
+        aria-hidden="false"
+        [ariaLabel]="'header.aria-label.computer' | translate"
+        fontIcon="computer"
+        class="computer-icon"
+      ></mat-icon>
+      <em>{{ this.role() }}</em>
+    </h1>
+  </div>
+
+  <div class="language-selector">
+    <mat-form-field>
+      <mat-select
+        value="es"
+        #languageSelector
+        (selectionChange)="changeLanguage(languageSelector.value)"
+      >
+        @for (language of languageDomains(); track language) {
+        <mat-option [value]="language">
+          {{ `header.languages.${language}` | translate }}
+        </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
 </header>

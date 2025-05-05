@@ -4,6 +4,7 @@ import {
   computed,
   effect,
   inject,
+  input,
   untracked,
   viewChildren,
 } from '@angular/core';
@@ -39,6 +40,8 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WorkExperiencesComponent {
+  lang = input.required<string>();
+
   expansionPanelsRef = viewChildren<MatExpansionPanel>('expansionPanels');
 
   workExperienceExpansionPanelService = inject(
@@ -47,8 +50,9 @@ export class WorkExperiencesComponent {
   mainService = inject(MainService);
 
   getDeveloperWorkExperiencesResource = rxResource({
-    request: () => ({}),
-    loader: ({ request }) => this.mainService.getDeveloperWorkExperiences(),
+    request: () => ({ lang: this.lang() }),
+    loader: ({ request }) =>
+      this.mainService.getDeveloperWorkExperiences(request.lang),
   });
   workExperienceResponse = computed(
     () => this.getDeveloperWorkExperiencesResource.value() ?? {}

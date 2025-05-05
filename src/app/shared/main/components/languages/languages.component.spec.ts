@@ -8,6 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MainService } from '../../../../services/main.service';
 import { MainMockService } from '../../../../mocks/services/main-mock.service';
 import { LanguagesComponent } from './languages.component';
+import { signal } from '@angular/core';
 
 describe('LanguagesComponent', () => {
   let component: LanguagesComponent;
@@ -28,6 +29,9 @@ describe('LanguagesComponent', () => {
 
     fixture = TestBed.createComponent(LanguagesComponent);
     component = fixture.componentInstance;
+
+    (component.lang as any) = signal('es');
+
     fixture.detectChanges();
   });
 

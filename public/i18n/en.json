@@ -1,4 +1,13 @@
 {
+  "header": {
+    "languages": {
+      "es": "Spanish - 🇪🇦",
+      "en": "English - 🇬🇧"
+    },
+    "aria-label": {
+      "computer": "computer icon"
+    }
+  },
   "SEO": {
     "title": "Frontend Web Developer",
     "metaTags": {
@@ -14,6 +23,11 @@
     "city": "City:",
     "alt": {
       "candidate": "Candidate"
+    },
+    "aria-icons": {
+      "mail": "email icon",
+      "phone": "phone icon",
+      "city": "city icon"
     }
   },
   "footer": {

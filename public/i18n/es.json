@@ -1,4 +1,13 @@
 {
+  "header": {
+    "languages": {
+      "es": "Español - 🇪🇦",
+      "en": "Inglés - 🇬🇧"
+    },
+    "aria-label": {
+      "computer": "icono de ordenador"
+    }
+  },
   "SEO": {
     "title": "Desarrollador Web Frontend",
     "metaTags": {
@@ -14,6 +23,11 @@
     "city": "Ciudad: ",
     "alt": {
       "candidate": "Candidato"
+    },
+    "aria-icons": {
+      "mail": "icono de email",
+      "phone": "icono de teléfono",
+      "city": "icono de ciudad"
     }
   },
   "footer": {

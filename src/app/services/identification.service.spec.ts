@@ -31,6 +31,6 @@ describe('IdentificationService', () => {
   });
 
   it('should return data when getIdentificationMethod is called', () => {
-    expect(service.getIdentification()).toBeTruthy();
+    expect(service.getIdentification('es')).toBeTruthy();
   });
 });

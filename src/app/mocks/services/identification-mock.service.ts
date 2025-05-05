@@ -9,7 +9,7 @@ import { identificationResponseMock } from '../data/identification-response.mock
   providedIn: 'root',
 })
 export class IdentificationMockService {
-  getIdentification(): Observable<IdentificationResponse> {
+  getIdentification(lang: string): Observable<IdentificationResponse> {
     return of(identificationResponseMock);
   }
 }

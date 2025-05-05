@@ -4,12 +4,11 @@ import { Meta, Title } from '@angular/platform-browser';
 
 import { TranslateService } from '@ngx-translate/core';
 
+import { availableLangs, defaultLang } from '../interfaces/langs';
+
 export interface SEOMetaTags {
   [key: string]: string;
 }
-
-const availableLangs = ['es', 'en'];
-const defaultLang = 'es';
 
 @Injectable({
   providedIn: 'root',
@@ -30,7 +29,7 @@ export class CustomTranslateService {
     this.setSEO(lang);
   }
 
-  chageLanguage(lang = defaultLang) {
+  changeLanguage(lang = defaultLang) {
     const newLang = availableLangs.includes(lang) ? lang : defaultLang;
     this.translate.use(newLang);
     this.currentLang.set(newLang);

@@ -33,23 +33,23 @@ describe('MainService', () => {
   describe('should retrieve data when request data from endpoints', () => {
     describe('should retrieve data when request data from endpoints', () => {
       it('should retrieve data when call to get habilities endpoint', () => {
-        expect(service.getHabilities()).toBeTruthy();
+        expect(service.getHabilities('es')).toBeTruthy();
       });
 
       it('should retrieve data when call to get languages endpoint', () => {
-        expect(service.getLanguages()).toBeTruthy();
+        expect(service.getLanguages('es')).toBeTruthy();
       });
 
       it('should retrieve data when call to get practice developer work experiences endpoint', () => {
-        expect(service.getDeveloperWorkExperiences()).toBeTruthy();
+        expect(service.getDeveloperWorkExperiences('es')).toBeTruthy();
       });
 
       it('should retrieve data when call to get summary endpoint', () => {
-        expect(service.getSummary()).toBeTruthy();
+        expect(service.getSummary('es')).toBeTruthy();
       });
 
       it('should retrieve data when call to get trainings endpoint', () => {
-        expect(service.getTrainings()).toBeTruthy();
+        expect(service.getTrainings('es')).toBeTruthy();
       });
     });
   });

@@ -19,28 +19,30 @@ export class MainService {
   private readonly http = inject(HttpClient);
   private readonly apiPathProxyService = inject(ApiPathProxyService);
 
-  getSummary(): Observable<SummaryResponse> {
-    const path = this.apiPathProxyService.getAPIPath('summary');
+  getSummary(lang: string): Observable<SummaryResponse> {
+    const path = this.apiPathProxyService.getAPIPath('summary', lang);
     return this.http.get<SummaryResponse>(path);
   }
 
-  getHabilities(): Observable<HabilitiesResponse> {
-    const path = this.apiPathProxyService.getAPIPath('habilities');
+  getHabilities(lang: string): Observable<HabilitiesResponse> {
+    const path = this.apiPathProxyService.getAPIPath('habilities', lang);
     return this.http.get<HabilitiesResponse>(path);
   }
 
-  getTrainings(): Observable<TrainingsResponse> {
-    const path = this.apiPathProxyService.getAPIPath('trainings');
+  getTrainings(lang: string): Observable<TrainingsResponse> {
+    const path = this.apiPathProxyService.getAPIPath('trainings', lang);
     return this.http.get<TrainingsResponse>(path);
   }
 
-  getLanguages(): Observable<LanguagesResponse> {
-    const path = this.apiPathProxyService.getAPIPath('languages');
+  getLanguages(lang: string): Observable<LanguagesResponse> {
+    const path = this.apiPathProxyService.getAPIPath('languages', lang);
     return this.http.get<LanguagesResponse>(path);
   }
 
-  getDeveloperWorkExperiences(): Observable<WorkExperiencesResponse> {
-    const path = this.apiPathProxyService.getAPIPath('workExperiences');
+  getDeveloperWorkExperiences(
+    lang: string
+  ): Observable<WorkExperiencesResponse> {
+    const path = this.apiPathProxyService.getAPIPath('workExperiences', lang);
     return this.http.get<WorkExperiencesResponse>(path);
   }
 }

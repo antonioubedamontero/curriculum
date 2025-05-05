@@ -1,4 +1,4 @@
-import { of, tap } from 'rxjs';
+import { of } from 'rxjs';
 import * as i18n from '../../../../public/i18n/es.json';
 
 export class TranslateMockService {

@@ -13,8 +13,8 @@ export class IdentificationService {
   private readonly http = inject(HttpClient);
   private readonly apiPathProxyService = inject(ApiPathProxyService);
 
-  getIdentification(): Observable<IdentificationResponse> {
-    const apiPath = this.apiPathProxyService.getAPIPath('identification');
+  getIdentification(lang: string): Observable<IdentificationResponse> {
+    const apiPath = this.apiPathProxyService.getAPIPath('identification', lang);
     return this.http.get<IdentificationResponse>(apiPath);
   }
 }

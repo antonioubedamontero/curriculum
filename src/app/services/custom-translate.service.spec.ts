@@ -35,10 +35,10 @@ describe('CustomTranslateService', () => {
   });
 
   it('should change translations', () => {
-    expect(service.chageLanguage('en')).toBeUndefined();
+    expect(service.changeLanguage('en')).toBeUndefined();
   });
 
   it('should change translations to a non permitted value', () => {
-    expect(service.chageLanguage('jp')).toBeUndefined();
+    expect(service.changeLanguage('jp')).toBeUndefined();
   });
 });

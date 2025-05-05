@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 import { SummaryComponent } from './components/summary/summary.component';
 import { HabilitiesComponent } from './components/habilities/habilities.component';
@@ -19,4 +19,6 @@ import { WorkExperiencesComponent } from './components/work-experience/work-expe
   styleUrl: './main.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MainComponent {}
+export class MainComponent {
+  lang = input.required<string>();
+}

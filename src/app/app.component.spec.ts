@@ -2,15 +2,11 @@ import { TestBed } from '@angular/core/testing';
 import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
 
 import { provideTranslateService, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppComponent } from './app.component';
 import { CustomTranslateService } from './services/custom-translate.service';
 import { CustomTranslateMockService } from './mocks/services/custom-translate-mock.service';
-
-const httpLoaderFactory: (http: HttpClient) => TranslateHttpLoader = (
-  http: HttpClient
-) => new TranslateHttpLoader(http, './i18n/', '.json');
+import { httpLoaderFactory } from './app.config';
 
 describe('AppComponent', () => {
   beforeEach(async () => {

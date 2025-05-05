@@ -9,7 +9,7 @@ import { provideHttpClient, HttpClient, withFetch } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { provideTranslateService, TranslateLoader } from '@ngx-translate/core';
 
-const httpLoaderFactory: (http: HttpClient) => TranslateHttpLoader = (
+export const httpLoaderFactory: (http: HttpClient) => TranslateHttpLoader = (
   http: HttpClient
 ) => new TranslateHttpLoader(http, './i18n/', '.json');
 

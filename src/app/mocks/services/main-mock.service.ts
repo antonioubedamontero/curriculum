@@ -21,23 +21,25 @@ import {
   providedIn: 'root',
 })
 export class MainMockService {
-  getSummary(): Observable<SummaryResponse> {
+  getSummary(lang: string): Observable<SummaryResponse> {
     return of(summaryResponseMock);
   }
 
-  getHabilities(): Observable<HabilitiesResponse> {
+  getHabilities(lang: string): Observable<HabilitiesResponse> {
     return of(habilitiesResponseMock);
   }
 
-  getTrainings(): Observable<TrainingsResponse> {
+  getTrainings(lang: string): Observable<TrainingsResponse> {
     return of(trainingsResponseMock);
   }
 
-  getLanguages(): Observable<LanguagesResponse> {
+  getLanguages(lang: string): Observable<LanguagesResponse> {
     return of(languagesResponseMock);
   }
 
-  getDeveloperWorkExperiences(): Observable<WorkExperiencesResponse> {
+  getDeveloperWorkExperiences(
+    lang: string
+  ): Observable<WorkExperiencesResponse> {
     return of(workExperiencesResponseMock);
   }
 }

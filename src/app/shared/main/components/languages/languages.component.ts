@@ -3,6 +3,7 @@ import {
   Component,
   computed,
   inject,
+  input,
 } from '@angular/core';
 import { rxResource } from '@angular/core/rxjs-interop';
 
@@ -19,11 +20,13 @@ import { MainService } from '../../../../services/main.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LanguagesComponent {
+  lang = input.required<string>();
+
   mainService = inject(MainService);
 
   languageResource = rxResource({
-    request: () => ({}),
-    loader: ({ request }) => this.mainService.getLanguages(),
+    request: () => ({ lang: this.lang() }),
+    loader: ({ request }) => this.mainService.getLanguages(request.lang),
   });
   languages = computed(() => this.languageResource.value()?.languages);
 }

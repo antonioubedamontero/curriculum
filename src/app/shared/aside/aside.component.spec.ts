@@ -5,6 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { AsideComponent } from './aside.component';
 import { signal } from '@angular/core';
 import { identificationResponseMock } from '../../mocks/data/identification-response.mock';
+import { MatIconModule } from '@angular/material/icon';
 
 describe('AsideComponent', () => {
   let component: AsideComponent;
@@ -12,7 +13,7 @@ describe('AsideComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AsideComponent, TranslateModule.forRoot()],
+      imports: [AsideComponent, MatIconModule, TranslateModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(AsideComponent);

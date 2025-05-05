@@ -1,6 +1,6 @@
 <nav class="networks">
   <ul class="networks-list">
-    @for (network of networks(); track network.label) {
+    @for (network of networks(); track $index) {
     <li class="networks-list-item">
       <a
         [href]="network.url"

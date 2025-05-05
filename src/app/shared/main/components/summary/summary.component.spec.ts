@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatIconModule } from '@angular/material/icon';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { signal } from '@angular/core';
 
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -28,6 +29,9 @@ describe('SummaryComponent', () => {
 
     fixture = TestBed.createComponent(SummaryComponent);
     component = fixture.componentInstance;
+
+    (component.lang as any) = signal('es');
+
     fixture.detectChanges();
   });
 

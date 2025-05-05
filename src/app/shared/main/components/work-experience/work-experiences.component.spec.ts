@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
-import { Component, input } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
@@ -48,6 +48,9 @@ describe('WorkExperiencesComponent', () => {
 
     fixture = TestBed.createComponent(WorkExperiencesComponent);
     component = fixture.componentInstance;
+
+    (component.lang as any) = signal('es');
+
     fixture.detectChanges();
   });
 

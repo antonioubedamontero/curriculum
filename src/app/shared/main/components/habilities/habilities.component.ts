@@ -3,6 +3,7 @@ import {
   Component,
   computed,
   inject,
+  input,
 } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
@@ -18,11 +19,13 @@ import { rxResource } from '@angular/core/rxjs-interop';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HabilitiesComponent {
+  lang = input.required<string>();
+
   mainService = inject(MainService);
 
   habilitiesResource = rxResource({
-    request: () => ({}),
-    loader: ({ request }) => this.mainService.getHabilities(),
+    request: () => ({ lang: this.lang() }),
+    loader: ({ request }) => this.mainService.getHabilities(request.lang),
   });
   habilities = computed(() => this.habilitiesResource.value()?.habilities);
 }

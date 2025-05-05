@@ -13,8 +13,7 @@ interface APICollection {
 export class ApiPathProxyService {
   customTranslateService = inject(CustomTranslateService);
 
-  getAPIPath(collection: string): string {
-    const language = this.customTranslateService.currentLang();
+  getAPIPath(collection: string, language: string): string {
     const environmentMap = new Map(Object.entries(environment));
 
     if (!environmentMap.get(language)) {

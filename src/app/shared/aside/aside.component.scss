@@ -3,6 +3,7 @@
 
 .aside {
   @include page-general($aside-color, white);
+  padding-inline: 1.2rem;
   display: flex;
   flex-direction: column;
   border-right: 2px solid lightgrey;
@@ -22,13 +23,25 @@
 
 .contact-info {
   list-style: square;
+}
 
-  &__item {
-    font-size: 1.2rem;
-    margin-block: 0.5rem;
+@media (min-width: 600px) {
+  /* sm */
+  .contact-info {
+    padding-left: 1.25rem;
+  }
+}
 
-    strong {
-      display: block;
-    }
+.contact-info-item {
+  font-size: 1.2rem;
+  margin-block: 0.5rem;
+
+  strong {
+    display: block;
+  }
+
+  &__label {
+    display: flex;
+    gap: 0.3rem;
   }
 }

@@ -6,6 +6,8 @@ Changelog project
 
 - Added icons (angular, phone and mail).
 - Added language selector to change language dinamically.
+- Added animations loading pages.
+- Change SEO texts.
 
 ## [1.0.2] - 2025-05-02
 

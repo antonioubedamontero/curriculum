@@ -3,6 +3,7 @@
 
 .aside {
   @include page-general($aside-color, white);
+  padding-inline: 1.2rem;
   display: flex;
   flex-direction: column;
   border-right: 2px solid lightgrey;

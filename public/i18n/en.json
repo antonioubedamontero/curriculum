@@ -1,4 +1,12 @@
 {
+  "SEO": {
+    "title": "Antonio Úbeda Montero | Angular Frontend Developer",
+    "metaTags": {
+      "author": "Antonio Úbeda Montero",
+      "description": "🚀 Antonio Úbeda Montero, frontend developer with more than 20 years of experience in technologies such as HTML5, CSS3, Javascript, and Angular. Specialized in the banking and insurance sectors 💼. If you're looking for an expert in technological solutions and agile development, explore my CV and portfolio! 🌐🔍 Let's connect to take your project to the next level. 💬👨‍💻",
+      "keywords": "Angular, Jasmine, CSS3, Angular Material, Karma, Json Server, Git, Jenkins, HTML5, JavaScript, Design Patterns, TypeScript, RxJS, Clean Code, Scrum"
+    }
+  },
   "header": {
     "languages": {
       "es": "Spanish - 🇪🇦",
@@ -6,14 +14,6 @@
     },
     "aria-label": {
       "computer": "computer icon"
-    }
-  },
-  "SEO": {
-    "title": "Frontend Web Developer",
-    "metaTags": {
-      "author": "Antonio Úbeda Montero",
-      "description": "Looking for an Angular Web Developer 👨‍💻? Look no further! Let's work together 🤝.",
-      "keywords": "HTML5, CSS3, Javascript, Typescript, Angular, Jasmine, Karma, Design Patterns, Clean Code, rxjs"
     }
   },
   "aside": {

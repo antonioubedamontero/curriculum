@@ -2,6 +2,12 @@
 
 Changelog project
 
+## [1.3.0] - 2025-05-06
+
+- Fix no updated meta tags.
+- Add canonical.
+- Change project color styles.
+
 ## [1.2.0] - 2025-05-06
 
 - Extract seo to a service.

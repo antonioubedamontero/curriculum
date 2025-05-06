@@ -19,5 +19,11 @@
 
 .work-experience-item-company {
   padding-bottom: 0.1rem;
-  border-bottom: 2px solid $header-color;
+}
+
+@media (min-width: 600px) {
+  /* sm */
+  .work-experience-item-company {
+    border-bottom: 2px solid $header-color;
+  }
 }

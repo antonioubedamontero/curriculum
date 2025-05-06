@@ -32,5 +32,11 @@
 
 .company-project-item-company {
   padding-block: 0.3rem;
-  border-bottom: 2px solid $header-color;
+}
+
+@media (min-width: 600px) {
+  /* sm */
+  .company-project-item-company {
+    border-bottom: 2px solid $header-color;
+  }
 }

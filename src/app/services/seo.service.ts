@@ -39,10 +39,18 @@ export class SeoService {
   }
 
   private setSEOMetaTags(SEOMetaTags: MetaTags): void {
-    this.metaService.addTags([
-      { name: 'author', content: SEOMetaTags['author'] },
-      { name: 'description', content: SEOMetaTags['description'] },
-      { name: 'keywords', content: SEOMetaTags['keywords'] },
-    ]);
+    // Add or update meta tags
+    this.metaService.updateTag({
+      name: 'author',
+      content: SEOMetaTags['author'],
+    });
+    this.metaService.updateTag({
+      name: 'description',
+      content: SEOMetaTags['description'],
+    });
+    this.metaService.updateTag({
+      name: 'keywords',
+      content: SEOMetaTags['keywords'],
+    });
   }
 }

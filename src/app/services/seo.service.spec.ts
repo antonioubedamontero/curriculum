@@ -1,15 +1,17 @@
 import { TestBed } from '@angular/core/testing';
+
+import { of } from 'rxjs';
+
 import { provideHttpClient } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
-
-import { IdentificationService } from './identification.service';
 import { ApiPathProxyService } from './api-path-proxy.service';
 import { TranslateModule } from '@ngx-translate/core';
-import { of } from 'rxjs';
-import { identificationMock } from '../mocks/data/identification-response.mock';
+import { SeoService } from './seo.service';
+import { SeoMockService } from '../mocks/services/seo-service.mock';
+import { seoMock } from '../mocks/data/seo-response.mock';
 
-describe('IdentificationService', () => {
-  let service: IdentificationService;
+describe('SeoService', () => {
+  let service: SeoService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -20,8 +22,8 @@ describe('IdentificationService', () => {
       ],
       imports: [TranslateModule.forRoot()],
     });
+    service = TestBed.inject(SeoService);
     TestBed.inject(ApiPathProxyService);
-    service = TestBed.inject(IdentificationService);
 
     spyOn(service['apiPathProxyService'], 'getAPIPath').and.returnValue(
       'mocked/api/path'
@@ -32,9 +34,9 @@ describe('IdentificationService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should return data from api when getIdentificationMethod is called', (done) => {
-    spyOn(service['http'], 'get').and.returnValue(of(identificationMock));
-    service.getIdentification('es').subscribe((resp) => {
+  it('should retrieve SEO data from endpoint', (done) => {
+    spyOn(service['http'], 'get').and.returnValue(of(seoMock));
+    service.getSeo('es').subscribe((resp) => {
       expect(resp).toBeTruthy();
       done();
     });

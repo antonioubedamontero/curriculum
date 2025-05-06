@@ -35,4 +35,8 @@ describe('CompanyProjectsComponent', () => {
   it('should create the app', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should return first project', () => {
+    expect(component.firstProject()).toBeTruthy();
+  });
 });

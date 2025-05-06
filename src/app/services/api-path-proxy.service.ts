@@ -1,7 +1,6 @@
-import { inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 import { environment } from '../../environments/environment';
-import { CustomTranslateService } from './custom-translate.service';
 
 interface APICollection {
   [key: string]: string;
@@ -11,8 +10,6 @@ interface APICollection {
   providedIn: 'root',
 })
 export class ApiPathProxyService {
-  customTranslateService = inject(CustomTranslateService);
-
   getAPIPath(collection: string, language: string): string {
     const environmentMap = new Map(Object.entries(environment));
 

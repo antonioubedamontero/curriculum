@@ -5,3 +5,4 @@ export * from './language-response.interface';
 export * from './summary-response.interface';
 export * from './trainnings-response.interface';
 export * from './work-experience-response.interface';
+export * from './seo.interface';

@@ -69,4 +69,9 @@ describe('HeaderComponent', () => {
     const htmlRole = fixture.nativeElement.querySelector('.header-data__role');
     expect(htmlRole).toBeTruthy();
   });
+
+  it('should change language', () => {
+    component.changeLanguage('en');
+    expect(component['customTranslateService'].currentLang()).toBe('en');
+  });
 });

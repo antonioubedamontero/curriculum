@@ -1,14 +1,13 @@
 import { TestBed } from '@angular/core/testing';
-import { Meta, Title } from '@angular/platform-browser';
 import { provideHttpClient } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 import { TranslateService } from '@ngx-translate/core';
 
 import { CustomTranslateService } from './custom-translate.service';
-import { TitleMockService } from '../mocks/services/title-service.mock';
-import { MetaMockService } from '../mocks/services/meta-service.mock';
 import { TranslateMockService } from '../mocks/services/translate-service.mock';
+import { SeoService } from './seo.service';
+import { SeoMockService } from '../mocks/services/seo-service.mock';
 
 describe('CustomTranslateService', () => {
   let service: CustomTranslateService;
@@ -19,8 +18,7 @@ describe('CustomTranslateService', () => {
         provideHttpClient(),
         provideHttpClientTesting(),
         { provide: TranslateService, useClass: TranslateMockService },
-        { provide: Title, useClass: TitleMockService },
-        { provide: Meta, useClass: MetaMockService },
+        { provide: SeoService, useClass: SeoMockService },
       ],
     });
     service = TestBed.inject(CustomTranslateService);

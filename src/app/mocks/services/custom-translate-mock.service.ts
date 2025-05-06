@@ -10,7 +10,7 @@ export class CustomTranslateMockService {
     this.currentLang.set(lang);
   }
 
-  chageLanguage(lang = 'es') {
+  changeLanguage(lang = 'es') {
     this.currentLang.set(lang);
   }
 }

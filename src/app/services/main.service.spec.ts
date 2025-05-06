@@ -1,10 +1,20 @@
 import { TestBed } from '@angular/core/testing';
 
+import { of } from 'rxjs';
+
 import { MainService } from './main.service';
 import { provideHttpClient } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { ApiPathProxyService } from './api-path-proxy.service';
 import { TranslateModule } from '@ngx-translate/core';
+
+import {
+  habilitiesResponseMock,
+  languagesResponseMock,
+  summaryResponseMock,
+  trainingsResponseMock,
+  workExperiencesResponseMock,
+} from '../mocks/data/main-response.mock';
 
 describe('MainService', () => {
   let service: MainService;
@@ -30,27 +40,45 @@ describe('MainService', () => {
     expect(service).toBeTruthy();
   });
 
-  describe('should retrieve data when request data from endpoints', () => {
-    describe('should retrieve data when request data from endpoints', () => {
-      it('should retrieve data when call to get habilities endpoint', () => {
-        expect(service.getHabilities('es')).toBeTruthy();
-      });
+  it('should get habilities from endpoint', (done) => {
+    spyOn(service['http'], 'get').and.returnValue(of(habilitiesResponseMock));
+    service.getHabilities('es').subscribe((resp) => {
+      expect(resp).toBeTruthy();
+      done();
+    });
+  });
 
-      it('should retrieve data when call to get languages endpoint', () => {
-        expect(service.getLanguages('es')).toBeTruthy();
-      });
+  it('should get languages from endpoint', (done) => {
+    spyOn(service['http'], 'get').and.returnValue(of(languagesResponseMock));
+    service.getLanguages('es').subscribe((resp) => {
+      expect(resp).toBeTruthy();
+      done();
+    });
+  });
 
-      it('should retrieve data when call to get practice developer work experiences endpoint', () => {
-        expect(service.getDeveloperWorkExperiences('es')).toBeTruthy();
-      });
+  it('should get developer work experience from endpoint', (done) => {
+    spyOn(service['http'], 'get').and.returnValue(
+      of(workExperiencesResponseMock)
+    );
+    service.getDeveloperWorkExperiences('es').subscribe((resp) => {
+      expect(resp).toBeTruthy();
+      done();
+    });
+  });
 
-      it('should retrieve data when call to get summary endpoint', () => {
-        expect(service.getSummary('es')).toBeTruthy();
-      });
+  it('should get summary from endpoint', (done) => {
+    spyOn(service['http'], 'get').and.returnValue(of(summaryResponseMock));
+    service.getSummary('es').subscribe((resp) => {
+      expect(resp).toBeTruthy();
+      done();
+    });
+  });
 
-      it('should retrieve data when call to get trainings endpoint', () => {
-        expect(service.getTrainings('es')).toBeTruthy();
-      });
+  it('should get trainings from endpoint', (done) => {
+    spyOn(service['http'], 'get').and.returnValue(of(trainingsResponseMock));
+    service.getTrainings('es').subscribe((resp) => {
+      expect(resp).toBeTruthy();
+      done();
     });
   });
 });

@@ -6,14 +6,32 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { NetworksComponent } from './networks.component';
 import { identificationResponseMock } from '../../../mocks/data/identification-response.mock';
+import {
+  WorkExpansionOpenPanelState,
+  WorkExperienceExpasionPanelService,
+} from '../../../services/work-experience-expasion-panel.service';
 
 describe('NetworksComponent', () => {
   let component: NetworksComponent;
   let fixture: ComponentFixture<NetworksComponent>;
 
   beforeEach(async () => {
+    window.print = jasmine.createSpy('print');
+
     await TestBed.configureTestingModule({
       imports: [NetworksComponent, MatIconModule, TranslateModule.forRoot()],
+      providers: [
+        {
+          provide: WorkExperienceExpasionPanelService,
+          useValue: {
+            openState: {
+              set(value: WorkExpansionOpenPanelState) {
+                return;
+              },
+            },
+          },
+        },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(NetworksComponent);
@@ -28,5 +46,12 @@ describe('NetworksComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should print page when button is pressed', () => {
+    const printPageSpy = spyOn(component, 'printPage').and.callThrough();
+    component.printPage();
+    expect(true).toBeTruthy();
+    expect(printPageSpy).toHaveBeenCalled();
   });
 });

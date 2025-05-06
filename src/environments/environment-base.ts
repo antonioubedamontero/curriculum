@@ -1,10 +1,11 @@
 export const environmentBaseData = {
   apiUrl: 'https://gist.githubusercontent.com/antonioubedamontero',
   es: {
+    seo: '/233a4f4025711b4ab94a2ada0b39d9e6/raw/ae1818beaa08b0c20d10436571b14b0cf4d39f00/cv-seo-es.json',
     identification:
       '/04eba3c23412315d8d4dac2ba4de9535/raw/6131e9cc0d9647faf54bf65150a841d244742d7b/cv-identification-es.json',
     summary:
-      '/29a81e351a92f3f96226d7c0b1f0db1f/raw/00ea9785e9368d143b616d5e22641a0eea3e1da8/cv-summary-es.json',
+      '/29a81e351a92f3f96226d7c0b1f0db1f/raw/bcbf223992c7d6b2b1e5a27802514e752e6cb41f/cv-summary-es.json',
     habilities:
       '/bfba2ad19b9a89f118b5778dc9938acc/raw/d43ba544341b9f63d3e00b854ca4a588b44c4b2f/cv-habilities-es.json',
     trainings:
@@ -15,10 +16,11 @@ export const environmentBaseData = {
       '/3f0409a5368515e1aebc8b9614c05d6a/raw/20c5032f9dc52bd3aa28d2d9c096871cff21916c/cv-experiences-es',
   },
   en: {
+    seo: '/afba542bc36661f6a97612078c20e1b0/raw/d7d7b0d7d8d18401b2f16baef9c3f8d9d7233811/cv-seo-en.json',
     identification:
       '/6a67f0836d08813e557214ecc9a9ab6b/raw/f434a2203adc0023d5f17e559c8f859d24fd0e57/cv-identification-en.json',
     summary:
-      '/40e3a264d13d0ba0edfe5c8fa4f9793b/raw/1f3b430e0f0b857b2ba4e0101bc9b76334f27f44/cv-summary-en.json',
+      '/40e3a264d13d0ba0edfe5c8fa4f9793b/raw/7c2257615aef71bb269c973f33998453eeadc5b9/cv-summary-en.json',
     habilities:
       '/4de20339de632061cb75938418bd1949/raw/80df8a4c1e0ad9abf52a0a22df3079ce3e8784c0/cv-habilities-en.json',
     trainings:

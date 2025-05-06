@@ -2,6 +2,12 @@
 
 Changelog project
 
+## [1.2.0] - 2025-05-06
+
+- Extract seo to a service.
+- Add tests and fix some one.
+- Change some SEO texts.
+
 ## [1.1.0] - 2025-05-05
 
 - Added icons (angular, phone and mail).

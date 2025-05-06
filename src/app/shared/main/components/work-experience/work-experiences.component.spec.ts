@@ -57,4 +57,8 @@ describe('WorkExperiencesComponent', () => {
   it('should create the app', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should get category', () => {
+    expect(component.getCategory('workSection1')).toBeTruthy();
+  });
 });

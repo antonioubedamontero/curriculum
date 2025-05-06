@@ -39,7 +39,6 @@ export class HeaderComponent {
   currentLang = signal(this.customTranslateService.currentLang());
 
   changeLanguage(lang: string) {
-    console.log('change language');
     this.customTranslateService.changeLanguage(lang);
     this.router.navigate([lang, 'web-developer']);
   }

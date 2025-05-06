@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { inject, Injectable, signal } from '@angular/core';
 
+import { delay, tap } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 
 import { availableLangs, defaultLang } from '../interfaces/langs';
@@ -23,9 +24,7 @@ export class CustomTranslateService {
     this.translate.use(lang);
     this.currentLang.set(lang);
 
-    this.seoService
-      .getSeo(lang)
-      .subscribe((seo: SEO) => this.seoService.setSEO(lang));
+    this.loadSeo(lang);
   }
 
   changeLanguage(lang = defaultLang) {
@@ -33,6 +32,18 @@ export class CustomTranslateService {
     this.translate.use(newLang);
     this.currentLang.set(newLang);
 
-    this.seoService.setSEO(newLang);
+    this.loadSeo(newLang);
+  }
+
+  private loadSeo(lang: string): void {
+    this.seoService
+      .getSeo(lang)
+      .pipe(
+        tap((seo: SEO) => this.seoService.setSEO(lang)),
+        delay(500)
+      )
+      .subscribe((seo: SEO) => {
+        this.seoService.setSEO(lang);
+      });
   }
 }

@@ -2,6 +2,12 @@
 
 Changelog project
 
+## [2.0.0] - 2025-05-07
+
+- Extract API url to external page.
+- Add fade in animation.
+- Fix aside offsets.
+
 ## [1.3.0] - 2025-05-06
 
 - Fix no updated meta tags.

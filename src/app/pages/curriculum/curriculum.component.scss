@@ -2,13 +2,14 @@
   display: grid;
   height: 100vh;
   grid-template-areas:
-    "header"
+    "headerarea"
     "aside"
     "main"
     "footer";
+  grid-template-columns: 1fr;
 
   &__header-container {
-    grid-area: header;
+    grid-area: headerarea;
   }
 
   &__aside-container {
@@ -28,8 +29,10 @@
   /* sm */
   .main-container {
     grid-template-areas:
-      "header header header header"
+      "headerarea headerarea headerarea headerarea"
       "aside main main main"
       "footer footer footer footer";
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }

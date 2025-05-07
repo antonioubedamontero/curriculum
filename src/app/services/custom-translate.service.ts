@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { inject, Injectable, signal } from '@angular/core';
 
-import { delay, tap } from 'rxjs';
+import { tap } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 
 import { availableLangs, defaultLang } from '../interfaces/langs';
@@ -39,8 +39,8 @@ export class CustomTranslateService {
     this.seoService
       .getSeo(lang)
       .pipe(
-        tap((seo: SEO) => this.seoService.setSEO(lang)),
-        delay(500)
+        tap((seo: SEO) => this.seoService.setSEO(lang))
+        //delay(500)
       )
       .subscribe((seo: SEO) => {
         this.seoService.setSEO(lang);

@@ -3,7 +3,7 @@ import { inject, Injectable, signal } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { DOCUMENT } from '@angular/common';
 
-import { Observable, tap } from 'rxjs';
+import { Observable, switchMap, tap } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 
 import { ApiPathProxyService } from './api-path-proxy.service';
@@ -22,8 +22,13 @@ export class SeoService {
   seo = signal<SEO | undefined>(undefined);
 
   getSeo(lang: string): Observable<SEO> {
-    const apiPath = this.apiPathProxyService.getAPIPath('seo', lang);
-    return this.http.get<SEO>(apiPath).pipe(tap((seo) => this.seo.set(seo)));
+    return this.apiPathProxyService
+      .getAPIPath('seo', lang)
+      .pipe(
+        switchMap((apiPath) =>
+          this.http.get<SEO>(apiPath).pipe(tap((seo) => this.seo.set(seo)))
+        )
+      );
   }
 
   setSEO(lang: string): void {

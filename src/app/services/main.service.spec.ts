@@ -32,7 +32,7 @@ describe('MainService', () => {
     TestBed.inject(ApiPathProxyService);
 
     spyOn(service['apiPathProxyService'], 'getAPIPath').and.returnValue(
-      'mocked/api/path'
+      of('mocked/api/path')
     );
   });
 

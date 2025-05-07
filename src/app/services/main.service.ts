@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable } from 'rxjs';
+import { Observable, switchMap } from 'rxjs';
 
 import { ApiPathProxyService } from './api-path-proxy.service';
 import {
@@ -20,29 +20,36 @@ export class MainService {
   private readonly apiPathProxyService = inject(ApiPathProxyService);
 
   getSummary(lang: string): Observable<SummaryResponse> {
-    const path = this.apiPathProxyService.getAPIPath('summary', lang);
-    return this.http.get<SummaryResponse>(path);
+    return this.apiPathProxyService
+      .getAPIPath('summary', lang)
+      .pipe(switchMap((apiPath) => this.http.get<SummaryResponse>(apiPath)));
   }
 
   getHabilities(lang: string): Observable<HabilitiesResponse> {
-    const path = this.apiPathProxyService.getAPIPath('habilities', lang);
-    return this.http.get<HabilitiesResponse>(path);
+    return this.apiPathProxyService
+      .getAPIPath('habilities', lang)
+      .pipe(switchMap((apiPath) => this.http.get<HabilitiesResponse>(apiPath)));
   }
 
   getTrainings(lang: string): Observable<TrainingsResponse> {
-    const path = this.apiPathProxyService.getAPIPath('trainings', lang);
-    return this.http.get<TrainingsResponse>(path);
+    return this.apiPathProxyService
+      .getAPIPath('trainings', lang)
+      .pipe(switchMap((apiPath) => this.http.get<TrainingsResponse>(apiPath)));
   }
 
   getLanguages(lang: string): Observable<LanguagesResponse> {
-    const path = this.apiPathProxyService.getAPIPath('languages', lang);
-    return this.http.get<LanguagesResponse>(path);
+    return this.apiPathProxyService
+      .getAPIPath('languages', lang)
+      .pipe(switchMap((apiPath) => this.http.get<LanguagesResponse>(apiPath)));
   }
 
   getDeveloperWorkExperiences(
     lang: string
   ): Observable<WorkExperiencesResponse> {
-    const path = this.apiPathProxyService.getAPIPath('workExperiences', lang);
-    return this.http.get<WorkExperiencesResponse>(path);
+    return this.apiPathProxyService
+      .getAPIPath('workExperiences', lang)
+      .pipe(
+        switchMap((apiPath) => this.http.get<WorkExperiencesResponse>(apiPath))
+      );
   }
 }

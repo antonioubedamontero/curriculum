@@ -24,7 +24,7 @@ describe('IdentificationService', () => {
     service = TestBed.inject(IdentificationService);
 
     spyOn(service['apiPathProxyService'], 'getAPIPath').and.returnValue(
-      'mocked/api/path'
+      of('mocked/api/path')
     );
   });
 

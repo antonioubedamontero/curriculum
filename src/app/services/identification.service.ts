@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable } from 'rxjs';
+import { Observable, switchMap } from 'rxjs';
 
 import { IdentificationResponse } from '../interfaces';
 import { ApiPathProxyService } from './api-path-proxy.service';
@@ -14,7 +14,10 @@ export class IdentificationService {
   private readonly apiPathProxyService = inject(ApiPathProxyService);
 
   getIdentification(lang: string): Observable<IdentificationResponse> {
-    const apiPath = this.apiPathProxyService.getAPIPath('identification', lang);
-    return this.http.get<IdentificationResponse>(apiPath);
+    return this.apiPathProxyService
+      .getAPIPath('identification', lang)
+      .pipe(
+        switchMap((apiPath) => this.http.get<IdentificationResponse>(apiPath))
+      );
   }
 }

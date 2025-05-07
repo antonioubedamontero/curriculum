@@ -1,3 +1,4 @@
+@if (habilitiesResource.hasValue()) {
 <section class="habilities">
   <h2 class="habilities__title">
     <mat-icon
@@ -8,14 +9,9 @@
     {{ "main.habilities.title" | translate }}
   </h2>
   <ul class="habilities-list">
-    @if (habilitiesResource.hasValue()) {
-    <!-- -->
     @for (hability of habilities(); track hability) {
-    <!-- -->
     <li [innerHTML]="hability"></li>
-    <!-- -->
-    }
-    <!-- -->
     }
   </ul>
 </section>
+}

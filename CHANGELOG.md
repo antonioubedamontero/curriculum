@@ -2,6 +2,11 @@
 
 Changelog project
 
+## [2.0.1] - 2025-05-07
+
+- Fix lighthouse issue.
+- Update sitemap.
+
 ## [2.0.0] - 2025-05-07
 
 - Extract API url to external page.

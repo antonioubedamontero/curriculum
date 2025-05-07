@@ -1,3 +1,4 @@
+@if (trainingResouce.hasValue()) {
 <section class="training">
   <h2 class="training__title">
     <mat-icon
@@ -8,14 +9,9 @@
     {{ "main.training.title" | translate }}
   </h2>
   <ul class="training-list">
-    @if (trainingResouce.hasValue()) {
-    <!-- -->
     @for (training of trainings(); track training) {
-    <!-- -->
     <li [innerHTML]="training"></li>
-    <!-- -->
-    }
-    <!-- -->
     }
   </ul>
 </section>
+}

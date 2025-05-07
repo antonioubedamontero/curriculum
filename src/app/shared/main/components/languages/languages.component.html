@@ -1,3 +1,4 @@
+@if (languageResource.hasValue()) {
 <section class="languages">
   <h2 class="languages__title">
     <mat-icon
@@ -8,14 +9,9 @@
     {{ "main.languages.title" | translate }}
   </h2>
   <ul class="languages-list">
-    @if (languageResource.hasValue()) {
-    <!-- -->
     @for (language of languages(); track language) {
-    <!-- -->
     <li [innerHTML]="language"></li>
-    <!-- -->
-    }
-    <!-- -->
     }
   </ul>
 </section>
+}

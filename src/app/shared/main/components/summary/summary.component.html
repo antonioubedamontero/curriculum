@@ -1,3 +1,4 @@
+@if (summaryResource.hasValue()) {
 <section class="summary">
   <h2 class="summary__title">
     <mat-icon
@@ -7,9 +8,6 @@
     ></mat-icon>
     {{ "main.summary.title" | translate }}
   </h2>
-  @if (summaryResource.hasValue()) {
-  <!-- -->
   <span class="summary__text" [innerHTML]="summary()"></span>
-  <!-- -->
-  }
 </section>
+}

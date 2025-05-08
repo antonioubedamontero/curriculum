@@ -11,8 +11,7 @@ import { WorkExperiencesComponent } from './work-experiences.component';
 
 import { MainService } from '../../../../services/main.service';
 import { MainMockService } from '../../../../mocks/services/main-mock.service';
-import { WorkExperienceResponseDetail } from '../../../../interfaces';
-import { WorkExperienceItemComponent } from './work-experience-item/work-experience-item.component';
+import { WorkExperienceItemResponse } from '../../../../interfaces';
 
 @Component({
   selector: 'app-work-experience-item',
@@ -20,7 +19,7 @@ import { WorkExperienceItemComponent } from './work-experience-item/work-experie
   template: `<p>Work experience item component</p>`,
 })
 export class WorkExperienceItemMockComponent {
-  workExperienceResponseDetail = input.required<WorkExperienceResponseDetail>();
+  workExperience = input.required<WorkExperienceItemResponse>();
 }
 
 describe('WorkExperiencesComponent', () => {
@@ -40,7 +39,6 @@ describe('WorkExperiencesComponent', () => {
       ],
       imports: [
         WorkExperiencesComponent,
-        WorkExperienceItemComponent,
         WorkExperienceItemMockComponent,
         MatIconModule,
         MatAccordion,
@@ -62,7 +60,36 @@ describe('WorkExperiencesComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should get category', () => {
+  it('should get work experiences from api', (done) => {
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(component.workExperienceResponse()).toBeTruthy();
+      done();
+    });
+  });
+
+  it('should get work experiences categories', (done) => {
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(component.workExperienceCategories()).toBeTruthy();
+      expect(component.workExperienceCategories().length).toBeGreaterThan(0);
+      done();
+    });
+  });
+
+  it('should get category details from ctegory', () => {
     expect(component.getCategory('workSection1')).toBeTruthy();
+  });
+
+  it('should render work experience title section', (done) => {
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      const htmlWorkExperienceSectionTitle: HTMLElement =
+        fixture.nativeElement.querySelector('.work-experience-title-section');
+      expect(htmlWorkExperienceSectionTitle.textContent).toBe(
+        'main.work-experience.title'
+      );
+      done();
+    });
   });
 });

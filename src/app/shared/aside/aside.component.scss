@@ -2,16 +2,13 @@
 @use "styles/mixins" as *;
 
 .aside {
+  position: relative;
   @include page-general($aside-color, white);
   padding-inline: 1.2rem;
-  display: flex;
-  flex-direction: column;
   border-right: 2px solid lightgrey;
 
   &__candidate-photo {
     width: 10rem;
-    align-self: center;
-    margin-block: 1rem;
     @include boxShadowEffect(grey, 3px);
   }
 
@@ -21,15 +18,30 @@
   }
 }
 
-.contact-info {
-  list-style: square;
+.photo-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.aside-wrapper {
+  margin: auto;
 }
 
 @media (min-width: 600px) {
   /* sm */
-  .contact-info {
-    padding-left: 1.25rem;
+  .aside-wrapper {
+    position: sticky;
+    top: 1rem;
   }
+}
+
+.contact-info-container {
+  margin: 1.3rem auto;
+}
+
+.contact-info {
+  list-style: square;
 }
 
 .contact-info-item {

@@ -17,8 +17,6 @@ describe('NetworksComponent', () => {
   let fixture: ComponentFixture<NetworksComponent>;
 
   beforeEach(async () => {
-    window.print = jasmine.createSpy('print');
-
     await TestBed.configureTestingModule({
       imports: [NetworksComponent, MatIconModule, TranslateModule.forRoot()],
       providers: [
@@ -65,12 +63,5 @@ describe('NetworksComponent', () => {
       );
       expect(htmlLAbel?.innerHTML).toBeDefined();
     });
-  });
-
-  it('should print page when button is pressed', () => {
-    const printPageSpy = spyOn(component, 'printPage').and.callThrough();
-    component.printPage();
-    expect(true).toBeTruthy();
-    expect(printPageSpy).toHaveBeenCalled();
   });
 });

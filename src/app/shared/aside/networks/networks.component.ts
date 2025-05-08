@@ -34,16 +34,7 @@ export class NetworksComponent {
   safeUrl = this.sanitizer.bypassSecurityTrustUrl('javascript:void(0)');
 
   networks = computed(() => {
-    const printNetwork: NetworkItem = {
-      shouldDownLoad: false,
-      url: this.safeUrl,
-      label: 'Curriculum',
-      ariaLabel: 'Print curriculum',
-      icon: 'images/print.ico',
-      isPrintAction: true,
-    };
-
-    const netWorks = [...this.identificationResponse().netWorks, printNetwork];
+    const netWorks = [...this.identificationResponse().netWorks];
 
     return netWorks.map((network: NetworkItem) => {
       return {
@@ -51,13 +42,4 @@ export class NetworksComponent {
       };
     });
   });
-
-  printPage(): void {
-    this.workExperienceExpasionPanelService.openState.set(
-      WorkExpansionOpenPanelState.all
-    );
-    setTimeout(() => {
-      window.print();
-    }, 1000);
-  }
 }

@@ -38,4 +38,30 @@ describe('WorkExperienceItemComponent', () => {
   it('should create the component', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render range dates and company name', (done) => {
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      const htmlRangeDates: HTMLElement = fixture.nativeElement.querySelector(
+        '.work-experience-item-dates'
+      );
+      expect(htmlRangeDates.innerHTML).toBeTruthy();
+
+      const htmlCompanyName: HTMLElement = fixture.nativeElement.querySelector(
+        '.work-experience-item-company'
+      );
+      expect(htmlCompanyName.innerHTML).toBeTruthy();
+      done();
+    });
+  });
+
+  it('should render company projects component', (done) => {
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      const htmlCompanyProjects: HTMLElement =
+        fixture.nativeElement.querySelector('app-company-projects');
+      expect(htmlCompanyProjects.innerHTML).toBeTruthy();
+      done();
+    });
+  });
 });

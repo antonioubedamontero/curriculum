@@ -29,10 +29,10 @@
   /* sm */
   .main-container {
     grid-template-areas:
-      "headerarea headerarea headerarea headerarea"
-      "aside main main main"
-      "footer footer footer footer";
+      "headerarea headerarea headerarea headerarea headerarea"
+      "aside main main main main"
+      "footer footer footer footer footer";
 
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }

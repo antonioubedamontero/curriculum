@@ -1,6 +1,5 @@
-@if (getDeveloperWorkExperiencesResource.hasValue()) {
-<!-- TODO: Refactor to reduce complexity -->
-<!-- TODO: Review work experience component tests and components depending on it -->
+@if (getDeveloperWorkExperiencesResource.hasValue() &&
+workExperienceCategories().length > 0) {
 <!-- -->
 <mat-accordion class="work-experience-section" multi>
   <h2 class="work-experience-section__title">
@@ -9,7 +8,9 @@
       [ariaLabel]="'main.work-experience.aria.title' | translate"
       fontIcon="work"
     ></mat-icon>
-    {{ "main.work-experience.title" | translate }}
+    <span class="work-experience-title-section">{{
+      "main.work-experience.title" | translate
+    }}</span>
   </h2>
 
   @for (categoryKey of workExperienceCategories(); track categoryKey) {
@@ -23,7 +24,9 @@
             [ariaLabel]="getCategory(categoryKey).sectionAriaTitle"
             [fontIcon]="getCategory(categoryKey).sectionIcon"
           ></mat-icon>
-          {{ getCategory(categoryKey).sectionTitle }}
+          <span class="work-experience-category-section-title">{{
+            getCategory(categoryKey).sectionTitle
+          }}</span>
         </h3>
       </mat-expansion-panel-header>
       <ul class="category-work-experiences">

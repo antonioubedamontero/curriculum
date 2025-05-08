@@ -1,4 +1,4 @@
-@if (summaryResource.hasValue()) {
+@if (summaryResource.hasValue() && summaryResource.value().summary) {
 <section class="summary">
   <h2 class="summary__title">
     <mat-icon
@@ -6,8 +6,13 @@
       [ariaLabel]="'main.summary.aria.title' | translate"
       fontIcon="auto_stories"
     ></mat-icon>
-    {{ "main.summary.title" | translate }}
+    <span class="summary-title-text">{{
+      "main.summary.title" | translate
+    }}</span>
   </h2>
-  <span class="summary__text" [innerHTML]="summary()"></span>
+  <span
+    class="summary__text"
+    [innerHTML]="summaryResource.value().summary"
+  ></span>
 </section>
 }

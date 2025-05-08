@@ -2,6 +2,11 @@
 
 Changelog project
 
+## [3.0.0] - 2025-05-08
+
+- Add test coverages and refactors.
+- Fix lint errors.
+
 ## [2.0.1] - 2025-05-07
 
 - Fix lighthouse issue.

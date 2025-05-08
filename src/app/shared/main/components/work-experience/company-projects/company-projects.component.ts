@@ -11,7 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ProjectItemResponse } from '../../../../../interfaces';
 
 @Component({
-  selector: 'company-projects',
+  selector: 'app-company-projects',
   imports: [MatIconModule, MatChipsModule],
   templateUrl: './company-projects.component.html',
   styleUrl: './company-projects.component.scss',

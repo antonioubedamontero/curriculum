@@ -8,6 +8,7 @@ import { CustomTranslateService } from './custom-translate.service';
 import { TranslateMockService } from '../mocks/services/translate-service.mock';
 import { SeoService } from './seo.service';
 import { SeoMockService } from '../mocks/services/seo-service.mock';
+import { defaultLang } from '../interfaces/langs';
 
 describe('CustomTranslateService', () => {
   let service: CustomTranslateService;
@@ -29,14 +30,17 @@ describe('CustomTranslateService', () => {
   });
 
   it('should init translations', () => {
-    expect(service.initTranslations()).toBeUndefined();
+    service.initTranslations();
+    expect(service['currentLang']()).toBe('es');
   });
 
   it('should change translations', () => {
-    expect(service.changeLanguage('en')).toBeUndefined();
+    service.changeLanguage('en');
+    expect(service['currentLang']()).toBe('en');
   });
 
   it('should change translations to a non permitted value', () => {
-    expect(service.changeLanguage('jp')).toBeUndefined();
+    expect(service.changeLanguage('jp'));
+    expect(service['currentLang']()).toBe(defaultLang);
   });
 });

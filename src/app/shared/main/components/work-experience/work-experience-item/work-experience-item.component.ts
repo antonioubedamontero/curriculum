@@ -7,7 +7,7 @@ import { CompanyProjectsComponent } from '../company-projects/company-projects.c
 import { WorkExperienceItemResponse } from '../../../../../interfaces';
 
 @Component({
-  selector: 'work-experience-item',
+  selector: 'app-work-experience-item',
   imports: [CompanyProjectsComponent, MatIconModule, MatChipsModule],
   templateUrl: './work-experience-item.component.html',
   styleUrl: './work-experience-item.component.scss',

@@ -1,12 +1,4 @@
 {
-  "SEO": {
-    "title": "Antonio Úbeda Montero | Desarrollador Frontend Angular",
-    "metaTags": {
-      "author": "Antonio Úbeda Montero",
-      "description": "🚀 Antonio Úbeda Montero, desarrollador frontend con más de 20 años de experiencia en tecnologías como HTML5, CSS3, Javascript, y Angular. Especializado en el sector bancario y de seguros 💼. Si buscas un experto en soluciones tecnológicas y desarrollo ágil, ¡explora mi CV y portfolio! 🌐🔍 Conectemos para llevar tu proyecto al siguiente nivel. 💬👨‍💻",
-      "keywords": "Angular,Jasmine,CSS3,Angular Material,Karma,Json Server,Git,Jenkins,HTML5,JavaScript,Patrones de diseño,TypeScript,RxJS,Clean Code,Scrum"
-    }
-  },
   "header": {
     "languages": {
       "es": "Español - 🇪🇦",

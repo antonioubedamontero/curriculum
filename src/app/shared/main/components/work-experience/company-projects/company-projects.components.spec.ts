@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { signal } from '@angular/core';
+import { ComponentRef } from '@angular/core';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
@@ -10,6 +10,7 @@ import { projectItemResponseWithProjectAndRangesMock } from '../../../../../mock
 
 describe('CompanyProjectsComponent', () => {
   let component: CompanyProjectsComponent;
+  let componentRef: ComponentRef<CompanyProjectsComponent>;
   let fixture: ComponentFixture<CompanyProjectsComponent>;
 
   beforeEach(async () => {
@@ -24,15 +25,16 @@ describe('CompanyProjectsComponent', () => {
 
     fixture = TestBed.createComponent(CompanyProjectsComponent);
     component = fixture.componentInstance;
+    componentRef = fixture.componentRef;
 
-    (component.companyProjects as any) = signal([
+    componentRef.setInput('companyProjects', [
       { ...projectItemResponseWithProjectAndRangesMock },
     ]);
 
     fixture.detectChanges();
   });
 
-  it('should create the app', () => {
+  it('should create the component', () => {
     expect(component).toBeTruthy();
   });
 

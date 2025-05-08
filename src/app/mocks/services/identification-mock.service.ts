@@ -9,6 +9,7 @@ import { identificationResponseMock } from '../data/identification-response.mock
   providedIn: 'root',
 })
 export class IdentificationMockService {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   getIdentification(lang: string): Observable<IdentificationResponse> {
     return of(identificationResponseMock);
   }

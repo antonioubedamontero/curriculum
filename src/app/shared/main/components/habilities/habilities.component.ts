@@ -1,7 +1,6 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  computed,
   inject,
   input,
 } from '@angular/core';
@@ -12,7 +11,7 @@ import { MainService } from '../../../../services/main.service';
 import { rxResource } from '@angular/core/rxjs-interop';
 
 @Component({
-  selector: 'main-habilities',
+  selector: 'app-main-habilities',
   imports: [MatIconModule, TranslateModule],
   templateUrl: './habilities.component.html',
   styleUrl: './habilities.component.scss',
@@ -27,5 +26,4 @@ export class HabilitiesComponent {
     request: () => ({ lang: this.lang() }),
     loader: ({ request }) => this.mainService.getHabilities(request.lang),
   });
-  habilities = computed(() => this.habilitiesResource.value()?.habilities);
 }

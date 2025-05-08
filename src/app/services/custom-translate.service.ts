@@ -6,7 +6,6 @@ import { TranslateService } from '@ngx-translate/core';
 
 import { availableLangs, defaultLang } from '../interfaces/langs';
 import { SeoService } from './seo.service';
-import { SEO } from '../interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -39,10 +38,10 @@ export class CustomTranslateService {
     this.seoService
       .getSeo(lang)
       .pipe(
-        tap((seo: SEO) => this.seoService.setSEO(lang))
+        tap(() => this.seoService.setSEO(lang))
         //delay(500)
       )
-      .subscribe((seo: SEO) => {
+      .subscribe(() => {
         this.seoService.setSEO(lang);
       });
   }

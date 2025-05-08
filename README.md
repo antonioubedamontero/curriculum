@@ -1,5 +1,7 @@
 # Curriculum
 
+TODO: Add a license and resume in Readme some technical data about the project
+
 Curriculum app developed with Angular 19.2.9 version (signals and standalome components)
 
 Install npm package dependencies:

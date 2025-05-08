@@ -1,4 +1,6 @@
 @if (getDeveloperWorkExperiencesResource.hasValue()) {
+<!-- TODO: Refactor to reduce complexity -->
+<!-- TODO: Review work experience component tests and components depending on it -->
 <!-- -->
 <mat-accordion class="work-experience-section" multi>
   <h2 class="work-experience-section__title">
@@ -28,9 +30,9 @@
         @for (workExperience of getCategory(categoryKey).workExperiences; track
         $index) {
         <li>
-          <work-experience-item
+          <app-work-experience-item
             [workExperience]="workExperience"
-          ></work-experience-item>
+          ></app-work-experience-item>
         </li>
         }
       </ul>

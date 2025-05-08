@@ -11,6 +11,7 @@ import { APIOrchestratorResponse } from '../interfaces';
 })
 export class ApiPathProxyService {
   private readonly http = inject(HttpClient);
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
   private readonly apiPaths = signal<APIOrchestratorResponse | {}>({});
 
   loadApiPathsFromApi(): Observable<APIOrchestratorResponse> {
@@ -30,17 +31,18 @@ export class ApiPathProxyService {
 
     return this.loadApiPathsFromApi().pipe(
       // need to load api paths before
-      switchMap((apiPath) => of(this.getApiPathUrl(collection, language)))
+      switchMap(() => of(this.getApiPathUrl(collection, language)))
     );
   }
 
   private getApiPathUrl(collection: string, language: string): string {
     const apiPathKeys: string[] = Object.keys(this.apiPaths());
 
-    if (!apiPathKeys || apiPathKeys.length === 0) return '';
+    if (!apiPathKeys || apiPathKeys.length === 0)
+      throw new Error('Error getting api path url. Not api paths where loaded');
 
     if (!apiPathKeys.includes(language)) {
-      throw new Error(`${language} is not defined in API `);
+      throw new Error(`${language} is not defined in API`);
     }
 
     const responseTyped = this.apiPaths() as APIOrchestratorResponse;

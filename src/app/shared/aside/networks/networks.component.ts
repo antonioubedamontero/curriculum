@@ -16,7 +16,7 @@ import {
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
-  selector: 'networks',
+  selector: 'app-networks',
   imports: [MatIconModule],
   templateUrl: './networks.component.html',
   styleUrl: './networks.component.scss',

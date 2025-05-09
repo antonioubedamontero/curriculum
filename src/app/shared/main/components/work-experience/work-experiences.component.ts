@@ -20,10 +20,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { MainService } from '../../../../services/main.service';
 import { WorkExperienceResponseDetail } from '../../../../interfaces';
-import {
-  WorkExpansionOpenPanelState,
-  WorkExperienceExpasionPanelService,
-} from '../../../../services/work-experience-expasion-panel.service';
+
 import { WorkExperienceItemComponent } from './work-experience-item/work-experience-item.component';
 
 @Component({
@@ -44,9 +41,6 @@ export class WorkExperiencesComponent {
 
   expansionPanelsRef = viewChildren<MatExpansionPanel>('expansionPanels');
 
-  workExperienceExpansionPanelService = inject(
-    WorkExperienceExpasionPanelService
-  );
   mainService = inject(MainService);
 
   getDeveloperWorkExperiencesResource = rxResource({
@@ -61,36 +55,15 @@ export class WorkExperiencesComponent {
     Object.keys(this.workExperienceResponse())
   );
 
-  private readonly loadExpansionPanelffect = effect(() => {
+  private readonly expansionPanelChangeEffect = effect(() => {
     if (this.expansionPanelsRef().length > 0) {
       untracked(() => {
-        this.workExperienceExpansionPanelService.openState.set(
-          WorkExpansionOpenPanelState.initial
-        );
+        this.expansionPanelsRef()?.at(0)?.open();
       });
     }
   });
 
-  private readonly workExperienceExpansionPanelChangeEffect = effect(() => {
-    const newOpenState = this.workExperienceExpansionPanelService.openState();
-    this.changeOpenStatePanel(newOpenState);
-  });
-
   getCategory(key: string): WorkExperienceResponseDetail {
     return this.workExperienceResponse()[key];
-  }
-
-  changeOpenStatePanel(state: WorkExpansionOpenPanelState) {
-    if (state === WorkExpansionOpenPanelState.unset) return;
-
-    if (state === WorkExpansionOpenPanelState.initial) {
-      const lastExperience = this.expansionPanelsRef().length - 1;
-      this.expansionPanelsRef()?.at(0)?.open();
-      this.expansionPanelsRef()?.at(lastExperience)?.open();
-    }
-
-    if (state === WorkExpansionOpenPanelState.all) {
-      this.expansionPanelsRef().forEach((panel) => panel.open());
-    }
   }
 }

@@ -2,6 +2,12 @@
 
 Changelog project
 
+## [3.0.1] - 2025-05-09
+
+- Delete photo cv from assets.
+- Resize and compress angular logo to fit in image.
+- Remove expansion panel not used service.
+
 ## [3.0.0] - 2025-05-08
 
 - Increase test coverage and refactors.

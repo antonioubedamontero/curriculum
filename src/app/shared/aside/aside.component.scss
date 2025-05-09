@@ -1,59 +1,57 @@
 @use "styles/variables" as *;
 @use "styles/mixins" as *;
 
-.aside {
+.aside-wrap {
   position: relative;
+  padding-block: 1rem;
+  padding-bottom: 1rem;
   @include page-general($aside-color, white);
-  padding-inline: 1.2rem;
-  border-right: 2px solid lightgrey;
+}
 
-  &__candidate-photo {
-    width: 10rem;
-    @include boxShadowEffect(grey, 3px);
-  }
+.aside {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &__title {
     /* Irrelevant in HTML but required for SEO */
     @include visually-hidden;
   }
-}
 
-.photo-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.aside-wrapper {
-  margin: auto;
+  &__candidate-photo {
+    width: 10rem;
+    @include boxShadowEffect(grey, 3px);
+  }
 }
 
 @media (min-width: 600px) {
   /* sm */
-  .aside-wrapper {
+  .aside {
     position: sticky;
+    padding-top: 0;
     top: 1rem;
   }
 }
 
-.contact-info-container {
-  margin: 1.3rem auto;
-}
-
 .contact-info {
   list-style: square;
+
+  .contact-info-item {
+    font-size: 1.2rem;
+    margin-block: 0.5rem;
+
+    strong {
+      display: block;
+    }
+
+    &__label {
+      display: flex;
+      gap: 0.3rem;
+    }
+  }
 }
 
-.contact-info-item {
-  font-size: 1.2rem;
-  margin-block: 0.5rem;
-
-  strong {
-    display: block;
-  }
-
-  &__label {
-    display: flex;
-    gap: 0.3rem;
-  }
+app-networks {
+  width: 100%;
 }

@@ -1,11 +1,13 @@
 .main-container {
-  display: grid;
   height: 100vh;
+
+  display: grid;
   grid-template-areas:
     "headerarea"
     "aside"
     "main"
     "footer";
+
   grid-template-columns: 1fr;
 
   &__header-container {
@@ -29,10 +31,10 @@
   /* sm */
   .main-container {
     grid-template-areas:
-      "headerarea headerarea headerarea headerarea"
-      "aside main main main"
-      "footer footer footer footer";
+      "headerarea headerarea"
+      "aside main"
+      "footer footer";
 
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 25% auto;
   }
 }

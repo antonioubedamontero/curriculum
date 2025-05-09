@@ -91,4 +91,20 @@ describe('CurriculumComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should get identification from api when lang has changed', () => {
+    component['customTranslateService'].changeLanguage('en');
+    expect(component.identificationData).toBeTruthy();
+  });
+
+  it('should have a header, aside, main and footer component', () => {
+    const headerComponent = fixture.nativeElement.querySelector('app-header');
+    expect(headerComponent).toBeTruthy();
+    const asideComponent = fixture.nativeElement.querySelector('app-aside');
+    expect(asideComponent).toBeTruthy();
+    const mainComponent = fixture.nativeElement.querySelector('app-main');
+    expect(mainComponent).toBeTruthy();
+    const footerComponent = fixture.nativeElement.querySelector('app-footer');
+    expect(footerComponent).toBeTruthy();
+  });
 });

@@ -5,9 +5,10 @@ export interface WorkExperienceResponseDetail {
   workExperiences: WorkExperienceItemResponse[];
 }
 
-export interface WorkExperiencesResponse {
-  [sectionName: string]: WorkExperienceResponseDetail;
-}
+export type WorkExperiencesResponse = Record<
+  string,
+  WorkExperienceResponseDetail
+>;
 
 export interface WorkExperienceItemResponse {
   company: string;

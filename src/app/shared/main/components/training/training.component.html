@@ -1,4 +1,4 @@
-@if (trainingResouce.hasValue()) {
+@if (trainingResouce.hasValue() && trainingResouce.value().trainings) {
 <section class="training">
   <h2 class="training__title">
     <mat-icon
@@ -6,10 +6,12 @@
       [ariaLabel]="'main.training.aria.title' | translate"
       fontIcon="school"
     ></mat-icon>
-    {{ "main.training.title" | translate }}
+    <span class="training-section-title">{{
+      "main.training.title" | translate
+    }}</span>
   </h2>
   <ul class="training-list">
-    @for (training of trainings(); track training) {
+    @for (training of trainingResouce.value().trainings; track training) {
     <li [innerHTML]="training"></li>
     }
   </ul>

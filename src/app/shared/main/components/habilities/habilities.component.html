@@ -1,4 +1,4 @@
-@if (habilitiesResource.hasValue()) {
+@if (habilitiesResource.hasValue() && habilitiesResource.value().habilities) {
 <section class="habilities">
   <h2 class="habilities__title">
     <mat-icon
@@ -6,10 +6,13 @@
       [ariaLabel]="'main.habilities.aria.title' | translate"
       fontIcon="tips_and_updates"
     ></mat-icon>
-    {{ "main.habilities.title" | translate }}
+    <span class="habilities-text-title">{{
+      "main.habilities.title" | translate
+    }}</span>
   </h2>
+  <!-- TODO: Add summary habilities as angular material chip component -->
   <ul class="habilities-list">
-    @for (hability of habilities(); track hability) {
+    @for (hability of habilitiesResource.value().habilities; track hability) {
     <li [innerHTML]="hability"></li>
     }
   </ul>

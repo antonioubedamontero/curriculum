@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { signal } from '@angular/core';
+import { ComponentRef } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
 
@@ -18,6 +18,7 @@ import { httpLoaderFactory } from '../../app.config';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
+  let componentRef: ComponentRef<HeaderComponent>;
   let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(async () => {
@@ -42,10 +43,9 @@ describe('HeaderComponent', () => {
 
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
+    componentRef = fixture.componentRef;
 
-    (component as any)['identificationResponse'] = signal(
-      identificationResponseMock
-    );
+    componentRef.setInput('identificationResponse', identificationResponseMock);
 
     fixture.detectChanges();
   });
@@ -54,20 +54,32 @@ describe('HeaderComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have a header with name and surname and a role in HTML', () => {
+  it('should get name and surname, and role', () => {
+    expect(component.nameAndSurname()).toBe('mock-name mock-surname');
+    expect(component.role()).toBe('mock role');
+  });
+
+  it('should render a header with name and surname and a role', () => {
     const htmlHeader = fixture.nativeElement.querySelector('header');
     expect(htmlHeader).toBeTruthy();
 
-    expect(component.nameAndSurname).toBeTruthy();
-    expect(component.role).toBeTruthy();
+    const htmlNameAndSurnameContainer: HTMLElement =
+      fixture.nativeElement.querySelector('.header-data__name-and-surname');
 
-    const htmlNameAndSurname = fixture.nativeElement.querySelector(
-      '.header-data__name-and-surname'
+    expect(htmlNameAndSurnameContainer.innerHTML).toBe(
+      'mock-name mock-surname'
     );
-    expect(htmlNameAndSurname).toBeTruthy();
 
-    const htmlRole = fixture.nativeElement.querySelector('.header-data__role');
-    expect(htmlRole).toBeTruthy();
+    const htmlRoleContainer: HTMLElement = fixture.nativeElement.querySelector(
+      '.header-data__role em'
+    );
+    expect(htmlRoleContainer.innerHTML).toBe('mock role');
+  });
+
+  it('should render a language selector', () => {
+    const htmlLanguageSelector: HTMLElement =
+      fixture.nativeElement.querySelector('.language-selector');
+    expect(htmlLanguageSelector).toBeTruthy();
   });
 
   it('should change language', () => {

@@ -1,59 +1,64 @@
-<aside class="aside">
-  <img
-    class="aside__candidate-photo"
-    loading="lazy"
-    width="160px"
-    height="160px"
-    [src]="identificationResponse().photoUrl"
-    [alt]="'aside.alt.candidate' | translate"
-  />
+<div class="aside-wrap">
+  <aside class="aside">
+    <img
+      class="aside__candidate-photo"
+      loading="lazy"
+      width="162px"
+      height="218px"
+      [src]="identificationResponse().photoUrl"
+      [alt]="'aside.alt.candidate' | translate"
+    />
 
-  <h2 class="aside__title">{{ "aside.title" | translate }}</h2>
-  <ul class="contact-info">
-    <li class="contact-info-item">
-      <div class="contact-info-item__label">
-        <mat-icon
-          aria-hidden="false"
-          [ariaLabel]="'aside.aria-icons.mail' | translate"
-          fontIcon="mail"
-        ></mat-icon>
-        <strong>{{ "aside.email" | translate }}</strong>
-      </div>
-      <a
-        class="contact-info-item__link"
-        [href]="`mailto:${identificationResponse().email}`"
-        >{{ identificationResponse().email }}</a
-      >
-    </li>
+    <h2 class="aside__title">{{ "aside.title" | translate }}</h2>
 
-    <li class="contact-info-item">
-      <div class="contact-info-item__label">
-        <mat-icon
-          aria-hidden="false"
-          [ariaLabel]="'aside.aria-icons.phone' | translate"
-          fontIcon="phone_iphone"
-        ></mat-icon>
-        <strong>{{ "aside.phone" | translate }}</strong>
-      </div>
-      <span class="contact-info-item__data">{{
-        identificationResponse().phone
-      }}</span>
-    </li>
+    <ul class="contact-info">
+      <li class="contact-info-item">
+        <div class="contact-info-item__label">
+          <mat-icon
+            aria-hidden="false"
+            [ariaLabel]="'aside.aria-icons.mail' | translate"
+            fontIcon="mail"
+          ></mat-icon>
+          <strong>{{ "aside.email" | translate }}</strong>
+        </div>
+        <a
+          class="contact-info-item__link"
+          [href]="`mailto:${identificationResponse().email}`"
+          >{{ identificationResponse().email }}</a
+        >
+      </li>
 
-    <li class="contact-info-item">
-      <div class="contact-info-item__label">
-        <mat-icon
-          aria-hidden="false"
-          [ariaLabel]="'aside.aria-icons.city' | translate"
-          fontIcon="emoji_transportation"
-        ></mat-icon>
-        <strong>{{ "aside.city" | translate }}</strong>
-      </div>
-      <span class="contact-info-item__data">
-        {{ identificationResponse().provinceCountry }}
-      </span>
-    </li>
-  </ul>
+      <li class="contact-info-item">
+        <div class="contact-info-item__label">
+          <mat-icon
+            aria-hidden="false"
+            [ariaLabel]="'aside.aria-icons.phone' | translate"
+            fontIcon="phone_iphone"
+          ></mat-icon>
+          <strong>{{ "aside.phone" | translate }}</strong>
+        </div>
+        <span class="contact-info-item__data">{{
+          identificationResponse().phone
+        }}</span>
+      </li>
 
-  <networks [identificationResponse]="identificationResponse()"></networks>
-</aside>
+      <li class="contact-info-item">
+        <div class="contact-info-item__label">
+          <mat-icon
+            aria-hidden="false"
+            [ariaLabel]="'aside.aria-icons.city' | translate"
+            fontIcon="emoji_transportation"
+          ></mat-icon>
+          <strong>{{ "aside.city" | translate }}</strong>
+        </div>
+        <span class="contact-info-item__data">
+          {{ identificationResponse().provinceCountry }}
+        </span>
+      </li>
+    </ul>
+
+    <app-networks
+      [identificationResponse]="identificationResponse()"
+    ></app-networks>
+  </aside>
+</div>

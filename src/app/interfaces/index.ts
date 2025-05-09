@@ -6,4 +6,5 @@ export * from './summary-response.interface';
 export * from './trainnings-response.interface';
 export * from './work-experience-response.interface';
 export * from './seo.interface';
-export * from './api-orchestrator-response.interface';
+export * from './api-orchestrator-response.type';
+export * from './key-value.type';

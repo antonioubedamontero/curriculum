@@ -1,4 +1,4 @@
-@if (languageResource.hasValue()) {
+@if (languageResource.hasValue() && languageResource.value().languages) {
 <section class="languages">
   <h2 class="languages__title">
     <mat-icon
@@ -6,10 +6,12 @@
       [ariaLabel]="'main.languages.aria.title' | translate"
       fontIcon="languages"
     ></mat-icon>
-    {{ "main.languages.title" | translate }}
+    <span class="language-section-title">{{
+      "main.languages.title" | translate
+    }}</span>
   </h2>
   <ul class="languages-list">
-    @for (language of languages(); track language) {
+    @for (language of languageResource.value().languages; track language) {
     <li [innerHTML]="language"></li>
     }
   </ul>

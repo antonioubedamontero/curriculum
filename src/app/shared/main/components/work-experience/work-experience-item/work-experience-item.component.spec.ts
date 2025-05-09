@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { signal } from '@angular/core';
+import { ComponentRef } from '@angular/core';
 
 import { MatIconModule } from '@angular/material/icon';
 
@@ -12,6 +12,7 @@ import { workExperienceItemResponseMock1 } from '../../../../../mocks/data/main-
 
 describe('WorkExperienceItemComponent', () => {
   let component: WorkExperienceItemComponent;
+  let componentRef: ComponentRef<WorkExperienceItemComponent>;
   let fixture: ComponentFixture<WorkExperienceItemComponent>;
 
   beforeEach(async () => {
@@ -27,13 +28,40 @@ describe('WorkExperienceItemComponent', () => {
 
     fixture = TestBed.createComponent(WorkExperienceItemComponent);
     component = fixture.componentInstance;
+    componentRef = fixture.componentRef;
 
-    (component.workExperience as any) = signal(workExperienceItemResponseMock1);
+    componentRef.setInput('workExperience', workExperienceItemResponseMock1);
 
     fixture.detectChanges();
   });
 
-  it('should create the app', () => {
+  it('should create the component', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render range dates and company name', (done) => {
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      const htmlRangeDates: HTMLElement = fixture.nativeElement.querySelector(
+        '.work-experience-item-dates'
+      );
+      expect(htmlRangeDates.innerHTML).toBeTruthy();
+
+      const htmlCompanyName: HTMLElement = fixture.nativeElement.querySelector(
+        '.work-experience-item-company'
+      );
+      expect(htmlCompanyName.innerHTML).toBeTruthy();
+      done();
+    });
+  });
+
+  it('should render company projects component', (done) => {
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      const htmlCompanyProjects: HTMLElement =
+        fixture.nativeElement.querySelector('app-company-projects');
+      expect(htmlCompanyProjects.innerHTML).toBeTruthy();
+      done();
+    });
   });
 });

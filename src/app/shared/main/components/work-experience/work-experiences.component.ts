@@ -20,20 +20,20 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { MainService } from '../../../../services/main.service';
 import { WorkExperienceResponseDetail } from '../../../../interfaces';
-import { WorkExperienceItemComponent } from './work-experience-item/work-experience-item.component';
 import {
   WorkExpansionOpenPanelState,
   WorkExperienceExpasionPanelService,
 } from '../../../../services/work-experience-expasion-panel.service';
+import { WorkExperienceItemComponent } from './work-experience-item/work-experience-item.component';
 
 @Component({
-  selector: 'main-work-experiences',
+  selector: 'app-main-work-experiences',
   imports: [
-    WorkExperienceItemComponent,
     MatIconModule,
     MatAccordion,
     MatExpansionModule,
     TranslateModule,
+    WorkExperienceItemComponent,
   ],
   templateUrl: './work-experiences.component.html',
   styleUrl: './work-experiences.component.scss',

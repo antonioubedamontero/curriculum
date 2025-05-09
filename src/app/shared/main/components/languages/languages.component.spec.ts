@@ -8,10 +8,11 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MainService } from '../../../../services/main.service';
 import { MainMockService } from '../../../../mocks/services/main-mock.service';
 import { LanguagesComponent } from './languages.component';
-import { signal } from '@angular/core';
+import { ComponentRef } from '@angular/core';
 
 describe('LanguagesComponent', () => {
   let component: LanguagesComponent;
+  let componentRef: ComponentRef<LanguagesComponent>;
   let fixture: ComponentFixture<LanguagesComponent>;
 
   beforeEach(async () => {
@@ -29,17 +30,49 @@ describe('LanguagesComponent', () => {
 
     fixture = TestBed.createComponent(LanguagesComponent);
     component = fixture.componentInstance;
+    componentRef = fixture.componentRef;
 
-    (component.lang as any) = signal('es');
+    componentRef.setInput('lang', 'es');
 
     fixture.detectChanges();
   });
 
-  it('should create the app', () => {
+  it('should create the component', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should get languages', () => {
-    expect(component.languages()?.length).toBeGreaterThan(0);
+  it('should get languages from api', (done) => {
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(
+        component.languageResource.value()?.languages.length
+      ).toBeGreaterThan(0);
+      done();
+    });
+  });
+
+  it('should render a language title', (done) => {
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      const htmlLanguageTitle: HTMLElement =
+        fixture.nativeElement.querySelector('.language-section-title');
+      expect(htmlLanguageTitle.innerHTML).toBe('main.languages.title');
+      done();
+    });
+  });
+
+  it('should render each language retrieved from api', (done) => {
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      const htmlLanguageList: HTMLElement =
+        fixture.nativeElement.querySelector('.languages-list');
+      expect(htmlLanguageList).toBeTruthy();
+
+      const htmlLanguageItems = htmlLanguageList.querySelectorAll('li');
+      htmlLanguageItems.forEach((htmlLanguageItem) => {
+        expect(htmlLanguageItem.innerHTML).toBeTruthy();
+      });
+      done();
+    });
   });
 });

@@ -1,7 +1,6 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  computed,
   inject,
   input,
 } from '@angular/core';
@@ -13,7 +12,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { MainService } from '../../../../services/main.service';
 
 @Component({
-  selector: 'main-training',
+  selector: 'app-main-training',
   imports: [MatIconModule, TranslatePipe],
   templateUrl: './training.component.html',
   styleUrl: './training.component.scss',
@@ -28,5 +27,4 @@ export class TrainingComponent {
     request: () => ({ lang: this.lang() }),
     loader: ({ request }) => this.mainService.getTrainings(request.lang),
   });
-  trainings = computed(() => this.trainingResouce.value()?.trainings);
 }

@@ -1,13 +1,12 @@
 <nav class="networks">
   <ul class="networks-list">
-    @for (network of networks(); track $index) {
+    @for (network of identificationResponse().netWorks; track $index) {
     <li class="networks-list-item">
       <a
         [href]="network.url"
         [attr.target]="network.shouldDownLoad ? null : '_blank'"
         [attr.download]="network.shouldDownLoad ? 'curriculum' : null"
         class="network-item-anchor"
-        (click)="network.isPrintAction ? printPage() : null"
       >
         <img
           class="network-item-anchor__image"

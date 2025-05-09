@@ -7,7 +7,6 @@ import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { ApiPathProxyService } from './api-path-proxy.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { SeoService } from './seo.service';
-import { SeoMockService } from '../mocks/services/seo-service.mock';
 import { seoMock } from '../mocks/data/seo-response.mock';
 
 describe('SeoService', () => {
@@ -38,6 +37,15 @@ describe('SeoService', () => {
     spyOn(service['http'], 'get').and.returnValue(of(seoMock));
     service.getSeo('es').subscribe((resp) => {
       expect(resp).toBeTruthy();
+      done();
+    });
+  });
+
+  it('should set seo data from endpoint', (done) => {
+    spyOn(service['http'], 'get').and.returnValue(of(seoMock));
+    service.getSeo('es').subscribe((seo) => {
+      service.setSEO('es');
+      expect(seo).toBeTruthy();
       done();
     });
   });

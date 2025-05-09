@@ -1,7 +1,6 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  computed,
   inject,
   input,
 } from '@angular/core';
@@ -13,7 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MainService } from '../../../../services/main.service';
 
 @Component({
-  selector: 'main-languages',
+  selector: 'app-main-languages',
   imports: [MatIconModule, TranslateModule],
   templateUrl: './languages.component.html',
   styleUrl: './languages.component.scss',
@@ -28,5 +27,4 @@ export class LanguagesComponent {
     request: () => ({ lang: this.lang() }),
     loader: ({ request }) => this.mainService.getLanguages(request.lang),
   });
-  languages = computed(() => this.languageResource.value()?.languages);
 }

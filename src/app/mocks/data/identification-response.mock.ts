@@ -5,8 +5,8 @@ import {
 } from '../../interfaces';
 
 export const identificationMock: Identification = {
-  name: 'mock name',
-  surname: 'mock surname',
+  name: 'mock-name',
+  surname: 'mock-surname',
 };
 
 export const networkItem: NetworkItem = {

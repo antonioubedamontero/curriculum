@@ -1,7 +1,6 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  computed,
   inject,
   input,
 } from '@angular/core';
@@ -13,7 +12,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { MainService } from '../../../../services/main.service';
 
 @Component({
-  selector: 'main-summary',
+  selector: 'app-main-summary',
   imports: [TranslatePipe, MatIconModule],
   templateUrl: './summary.component.html',
   styleUrl: './summary.component.scss',
@@ -28,6 +27,4 @@ export class SummaryComponent {
     request: () => ({ lang: this.lang() }),
     loader: ({ request }) => this.mainService.getSummary(request.lang),
   });
-
-  summary = computed(() => this.summaryResource.value()?.summary);
 }

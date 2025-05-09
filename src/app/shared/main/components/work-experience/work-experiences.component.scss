@@ -2,11 +2,15 @@
 @use "styles/variables" as *;
 
 .work-experience-section {
-  margin-block: 1rem;
+  margin-top: 1rem;
   &__title {
     @include header2;
     margin: 0;
   }
+}
+
+.categories-article {
+  margin-block: 1rem;
 }
 
 .work-experience-category {

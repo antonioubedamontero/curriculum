@@ -2,6 +2,10 @@
 
 Changelog project
 
+## [3.0.2] - 2025-05-13
+
+- Fix pdf curriculum and page data bug.
+
 ## [3.0.1] - 2025-05-09
 
 - Delete photo cv from assets.

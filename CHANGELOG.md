@@ -2,6 +2,10 @@
 
 Changelog project
 
+## [3.1.0] - 2025-05-13
+
+- Pass cv JSONs to github data repo.
+
 ## [3.0.2] - 2025-05-13
 
 - Fix pdf curriculum and page data bug.

@@ -2,6 +2,11 @@
 
 Changelog project
 
+## [3.2.0] - 2025-05-14
+
+- Added Link to github repo.
+- Update sitemap.
+
 ## [3.1.0] - 2025-05-13
 
 - Pass cv JSONs to github data repo.

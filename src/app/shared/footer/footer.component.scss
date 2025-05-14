@@ -6,7 +6,9 @@
   text-align: center;
   margin: 0 auto;
   border-top: 1px solid lightgrey;
+}
 
+.footer-content {
   &__title {
     /* Irrelevant in HTML but required for SEO */
     @include visually-hidden;
@@ -15,4 +17,8 @@
   &__copyright {
     font-weight: 500;
   }
+}
+
+.footer-link {
+  padding-top: 0.5rem;
 }

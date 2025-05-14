@@ -1,6 +1,16 @@
 <footer class="footer">
-  <h2 class="footer__title">{{ "footer.title" | translate }}</h2>
-  <strong class="footer__copyright"
-    >&copy; {{ currentYear }} - {{ nameAndSurname() }}</strong
+  <div class="footer-content">
+    <h2 class="footer-content__title">{{ "footer.title" | translate }}</h2>
+    <strong class="footer__copyright"
+      >&copy; {{ currentYear }} - {{ nameAndSurname() }}</strong
+    >
+  </div>
+
+  <a
+    class="footer-link"
+    href="https://github.com/antonioubedamontero/curriculum"
+    target="_blank"
   >
+    {{ "footer.look-code" | translate }}
+  </a>
 </footer>

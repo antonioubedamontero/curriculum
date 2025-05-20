@@ -59,7 +59,9 @@
       "table": {
         "name": "Proyecto",
         "code": "Codigo",
-        "app": "Online"
+        "app": "App",
+        "view": "[Ver Código]",
+        "web": "[Web]"
       }
     },
     "languages": {

@@ -1,0 +1,20 @@
+@if (tagsResource.hasValue() && tagsResource.value().length > 0) {
+<section class="tags">
+  <h2 class="tags__title">
+    <mat-icon
+      aria-hidden="false"
+      [ariaLabel]="'main.tags.aria.title' | translate"
+      fontIcon="filter_drama"
+    ></mat-icon>
+    <span class="tags-section-title">{{ "main.tags.title" | translate }}</span>
+  </h2>
+
+  <ul class="tag-list">
+    @for (tag of tagsResource.value(); track tag) {
+    <li>
+      <mat-chip>{{ tag }}</mat-chip>
+    </li>
+    }
+  </ul>
+</section>
+}

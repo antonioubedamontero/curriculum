@@ -2,6 +2,12 @@
 
 Changelog project
 
+## [3.3.0] - 2025-05-20
+
+- Add tag cloud with experience.
+- Change meta description and page title.
+- Add new paragraph to summary.
+
 ## [3.2.0] - 2025-05-14
 
 - Added Link to github repo.

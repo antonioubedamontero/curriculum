@@ -1,0 +1,22 @@
+@use "styles/mixins" as *;
+@use "styles/variables" as *;
+
+.tags {
+  &__title {
+    @include header2;
+    margin: 0 1.2rem;
+  }
+}
+
+.tag-list {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin: 1rem;
+  list-style: none;
+}
+
+mat-chip {
+  background-color: $aside-color !important;
+}

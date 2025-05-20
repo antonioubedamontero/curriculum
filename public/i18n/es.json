@@ -56,6 +56,12 @@
       "aria": {
         "title": "icono de globo terrestre"
       }
+    },
+    "tags": {
+      "title": "Nube de tags",
+      "aria": {
+        "title": "icono de nube"
+      }
     }
   }
 }

@@ -7,6 +7,7 @@ import { ApiPathProxyService } from './api-path-proxy.service';
 import {
   HabilitiesResponse,
   LanguagesResponse,
+  PersonalProjects,
   SummaryResponse,
   TrainingsResponse,
   WorkExperiencesResponse,
@@ -51,5 +52,11 @@ export class MainService {
       .pipe(
         switchMap((apiPath) => this.http.get<WorkExperiencesResponse>(apiPath))
       );
+  }
+
+  getPersonalProjects(lang: string): Observable<PersonalProjects> {
+    return this.apiPathProxyService
+      .getAPIPath('personalProjects', lang)
+      .pipe(switchMap((apiPath) => this.http.get<PersonalProjects>(apiPath)));
   }
 }

@@ -15,6 +15,7 @@ import {
   trainingsResponseMock,
   workExperiencesResponseMock,
 } from '../mocks/data/main-response.mock';
+import { personalProjectsResponseMock } from '../mocks/data/personal-project-response.mock';
 
 describe('MainService', () => {
   let service: MainService;
@@ -77,6 +78,16 @@ describe('MainService', () => {
   it('should get trainings from endpoint', (done) => {
     spyOn(service['http'], 'get').and.returnValue(of(trainingsResponseMock));
     service.getTrainings('es').subscribe((resp) => {
+      expect(resp).toBeTruthy();
+      done();
+    });
+  });
+
+  it('should get personal projects from endpoint', (done) => {
+    spyOn(service['http'], 'get').and.returnValue(
+      of(personalProjectsResponseMock)
+    );
+    service.getPersonalProjects('es').subscribe((resp) => {
       expect(resp).toBeTruthy();
       done();
     });

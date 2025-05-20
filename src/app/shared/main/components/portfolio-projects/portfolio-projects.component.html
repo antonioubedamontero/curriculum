@@ -1,0 +1,41 @@
+@if (portfolioProjectsResource.hasValue()) {
+<section class="portfolio-projects">
+  <h2 class="portfolio-projects__title">
+    <span>&lt;👨‍💻code&gt;</span
+    ><span class="portfolio-projects-text-title">{{
+      "main.portfolio-projects.title" | translate
+    }}</span>
+  </h2>
+
+  <table
+    class="portfolio-projects-table"
+    mat-table
+    [dataSource]="portfolioProjectsResource.value()"
+    class="mat-elevation-z8"
+  >
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>
+        {{ "main.portfolio-projects.table.name" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="code">
+      <th mat-header-cell *matHeaderCellDef>
+        {{ "main.portfolio-projects.table.code" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.code }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="app">
+      <th mat-header-cell *matHeaderCellDef>
+        {{ "main.portfolio-projects.table.app" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.app }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</section>
+}

@@ -51,6 +51,17 @@
         "title": "briefcase icon"
       }
     },
+    "portfolio-projects": {
+      "title": "Personal projects",
+      "aria": {
+        "title": "icon project"
+      },
+      "table": {
+        "name": "Project",
+        "code": "Code",
+        "app": "Live"
+      }
+    },
     "languages": {
       "title": "Languages",
       "aria": {

@@ -51,6 +51,17 @@
         "title": "icono de maletín"
       }
     },
+    "portfolio-projects": {
+      "title": "Proyectos personales",
+      "aria": {
+        "title": "icono de proyecto"
+      },
+      "table": {
+        "name": "Proyecto",
+        "code": "Codigo",
+        "app": "Online"
+      }
+    },
     "languages": {
       "title": "Idiomas",
       "aria": {

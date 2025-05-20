@@ -8,6 +8,8 @@ Changelog project
 - Change meta description and page title.
 - Add new paragraph to summary.
 - Add cloud tag test and fix failing test.
+- Show all accordion closed.
+- Add personal project endpoint and new personal projects section.
 
 ## [3.2.0] - 2025-05-14
 

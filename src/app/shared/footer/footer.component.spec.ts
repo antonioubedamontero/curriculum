@@ -36,8 +36,6 @@ describe('FooterComponent', () => {
         fixture.nativeElement.querySelector('footer');
       expect(htmlFooter).toBeTruthy();
 
-      console.log('footer', htmlFooter);
-
       expect(component.currentYear).toBe(new Date().getFullYear());
       expect(component.nameAndSurname()).toBe('mock-name mock-surname');
 

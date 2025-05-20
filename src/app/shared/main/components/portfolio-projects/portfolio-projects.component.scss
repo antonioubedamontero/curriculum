@@ -1,0 +1,25 @@
+@use "styles/mixins" as *;
+
+.portfolio-projects {
+  margin-block: 1rem;
+  &__title {
+    @include header2;
+    margin: 1rem 0;
+  }
+}
+
+table,
+th,
+td {
+  border: 1px solid grey;
+}
+
+th {
+  background-color: lightgrey !important;
+  color: black;
+  font-weight: 800;
+}
+
+td {
+  background-color: white !important;
+}

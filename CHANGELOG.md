@@ -7,6 +7,7 @@ Changelog project
 - Add tag cloud with experience.
 - Change meta description and page title.
 - Add new paragraph to summary.
+- Add cloud tag test and fix failing test.
 
 ## [3.2.0] - 2025-05-14
 

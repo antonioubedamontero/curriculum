@@ -2,19 +2,12 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
-  effect,
   inject,
   input,
-  untracked,
-  viewChildren,
 } from '@angular/core';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { MatIconModule } from '@angular/material/icon';
-import {
-  MatAccordion,
-  MatExpansionModule,
-  MatExpansionPanel,
-} from '@angular/material/expansion';
+import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
 
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -39,8 +32,6 @@ import { WorkExperienceItemComponent } from './work-experience-item/work-experie
 export class WorkExperiencesComponent {
   lang = input.required<string>();
 
-  expansionPanelsRef = viewChildren<MatExpansionPanel>('expansionPanels');
-
   mainService = inject(MainService);
 
   getDeveloperWorkExperiencesResource = rxResource({
@@ -54,14 +45,6 @@ export class WorkExperiencesComponent {
   workExperienceCategories = computed(() =>
     Object.keys(this.workExperienceResponse())
   );
-
-  private readonly expansionPanelChangeEffect = effect(() => {
-    if (this.expansionPanelsRef().length > 0) {
-      untracked(() => {
-        this.expansionPanelsRef()?.at(0)?.open();
-      });
-    }
-  });
 
   getCategory(key: string): WorkExperienceResponseDetail {
     return this.workExperienceResponse()[key];

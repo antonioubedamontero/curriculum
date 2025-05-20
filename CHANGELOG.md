@@ -2,6 +2,15 @@
 
 Changelog project
 
+## [3.3.0] - 2025-05-20
+
+- Add tag cloud section with main knowledge.
+- Change meta description and page title to optimize SEO.
+- Add new paragraph to summary section JSON.
+- Add cloud tag test and fix failing test.
+- Show all accordion closed. A/B Test.
+- Add personal project endpoint and new personal projects section.
+
 ## [3.2.0] - 2025-05-14
 
 - Added Link to github repo.

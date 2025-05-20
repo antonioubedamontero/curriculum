@@ -8,3 +8,4 @@ export * from './work-experience-response.interface';
 export * from './seo.interface';
 export * from './api-orchestrator-response.type';
 export * from './key-value.type';
+export * from './personal-project.interface';

@@ -5,6 +5,8 @@ import { HabilitiesComponent } from './components/habilities/habilities.componen
 import { TrainingComponent } from './components/training/training.component';
 import { LanguagesComponent } from './components/languages/languages.component';
 import { WorkExperiencesComponent } from './components/work-experience/work-experiences.component';
+import { TagsComponent } from './components/tags/tags.component';
+import { PortfolioProjectsComponent } from './components/portfolio-projects/portfolio-projects.component';
 
 @Component({
   selector: 'app-main',
@@ -14,6 +16,8 @@ import { WorkExperiencesComponent } from './components/work-experience/work-expe
     TrainingComponent,
     WorkExperiencesComponent,
     LanguagesComponent,
+    TagsComponent,
+    PortfolioProjectsComponent,
   ],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss',

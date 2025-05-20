@@ -10,7 +10,7 @@
       "main.habilities.title" | translate
     }}</span>
   </h2>
-  <!-- TODO: Add summary habilities as angular material chip component -->
+
   <ul class="habilities-list">
     @for (hability of habilitiesResource.value().habilities; track hability) {
     <li [innerHTML]="hability"></li>

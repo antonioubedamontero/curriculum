@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 import {
   HabilitiesResponse,
   LanguagesResponse,
+  PersonalProjects,
   SummaryResponse,
   TrainingsResponse,
   WorkExperiencesResponse,
@@ -16,6 +17,7 @@ import {
   trainingsResponseMock,
   workExperiencesResponseMock,
 } from '../data/main-response.mock';
+import { personalProjectsResponseMock } from '../data/personal-project-response.mock';
 
 @Injectable({
   providedIn: 'root',
@@ -46,5 +48,12 @@ export class MainMockService {
     lang: string
   ): Observable<WorkExperiencesResponse> {
     return of(workExperiencesResponseMock);
+  }
+
+  getPersonalProjects(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    lang: string
+  ): Observable<PersonalProjects> {
+    return of(personalProjectsResponseMock);
   }
 }

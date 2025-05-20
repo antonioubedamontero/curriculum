@@ -51,10 +51,29 @@
         "title": "icono de maletín"
       }
     },
+    "portfolio-projects": {
+      "title": "Proyectos personales",
+      "aria": {
+        "title": "icono de proyecto"
+      },
+      "table": {
+        "name": "Proyecto",
+        "code": "Codigo",
+        "app": "App",
+        "view": "[Ver Código]",
+        "web": "[Web]"
+      }
+    },
     "languages": {
       "title": "Idiomas",
       "aria": {
         "title": "icono de globo terrestre"
+      }
+    },
+    "tags": {
+      "title": "Nube de tags",
+      "aria": {
+        "title": "icono de nube"
       }
     }
   }

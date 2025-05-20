@@ -51,10 +51,29 @@
         "title": "briefcase icon"
       }
     },
+    "portfolio-projects": {
+      "title": "Personal projects",
+      "aria": {
+        "title": "icon project"
+      },
+      "table": {
+        "name": "Project",
+        "code": "Code",
+        "app": "App",
+        "view": "[View Code]",
+        "web": "[Live web]"
+      }
+    },
     "languages": {
       "title": "Languages",
       "aria": {
         "title": "Globe icon"
+      }
+    },
+    "tags": {
+      "title": "Tag Cloud",
+      "aria": {
+        "title": "cloud icon"
       }
     }
   }

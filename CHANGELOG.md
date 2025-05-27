@@ -2,6 +2,10 @@
 
 Changelog project
 
+## [3.4.1] - 2025-05-27
+
+- Remove test from build as Vercel can't use Chrome headless.
+
 ## [3.4.0] - 2025-05-27
 
 - Add og meta tags.

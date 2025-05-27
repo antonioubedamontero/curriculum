@@ -2,6 +2,12 @@
 
 Changelog project
 
+## [3.4.0] - 2025-05-27
+
+- Add og meta tags.
+- Add CI/CD quality build script.
+- Generale sitmap.xml using a script.
+
 ## [3.3.0] - 2025-05-20
 
 - Add tag cloud section with main knowledge.

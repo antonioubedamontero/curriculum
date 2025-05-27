@@ -1,13 +1,13 @@
 {
   "name": "curriculum",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "npm run test:headless && node sitemap-generator.js && ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
+    "test:headless": "ng test --watch=false --browsers=ChromeHeadless",
     "serve:ssr:curriculum": "node dist/curriculum/server/server.mjs",
     "lint": "ng lint"
   },

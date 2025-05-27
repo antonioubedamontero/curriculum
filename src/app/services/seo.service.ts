@@ -7,7 +7,7 @@ import { Observable, switchMap, tap } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 
 import { ApiPathProxyService } from './api-path-proxy.service';
-import { MetaTags, SEO } from '../interfaces';
+import { MetaTags, OgMetags, SEO } from '../interfaces';
 
 @Injectable({ providedIn: 'root' })
 export class SeoService {
@@ -36,6 +36,7 @@ export class SeoService {
       this.document.documentElement.setAttribute('lang', lang);
       this.setSEOTitle(this.seo()!.title);
       this.setSEOMetaTags(this.seo()!.metaTags);
+      this.setSEOOgMetaTags(this.seo()!.ogTags);
     }
   }
 
@@ -56,6 +57,30 @@ export class SeoService {
     this.metaService.updateTag({
       name: 'keywords',
       content: SEOMetaTags['keywords'],
+    });
+  }
+
+  private setSEOOgMetaTags(SEOOgMetaTags: OgMetags): void {
+    Object.entries(SEOOgMetaTags).forEach(([key, value]) => {
+      this.metaService.updateTag({
+        name: 'og:'.concat(key),
+        content: value,
+      });
+    });
+
+    this.metaService.updateTag({
+      name: 'og:type',
+      content: 'website',
+    });
+
+    this.metaService.updateTag({
+      name: 'og:image:width',
+      content: '1200',
+    });
+
+    this.metaService.updateTag({
+      name: 'og:image:height',
+      content: '630',
     });
   }
 }

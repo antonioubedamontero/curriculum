@@ -35,6 +35,6 @@
       "aside main"
       "footer footer";
 
-    grid-template-columns: 25% auto;
+    grid-template-columns: fit-content auto;
   }
 }

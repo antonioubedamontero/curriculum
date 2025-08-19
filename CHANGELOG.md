@@ -2,6 +2,12 @@
 
 Changelog project
 
+## [3.5.1] - 2025-08-19
+
+- Add some missing personal projects in list.
+- Move personal projects below work experience section.
+- Update sitemap.xml.
+
 ## [3.4.1] - 2025-05-27
 
 - Remove test from build as Vercel can't use Chrome headless.

@@ -60,7 +60,7 @@ npm run test
 or if desire a chrome headless version:
 
 ```bash
-npm run test-headless
+npm run test:headless
 ```
 
 Generate build (dist folder):

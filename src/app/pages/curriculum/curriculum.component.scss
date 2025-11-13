@@ -38,3 +38,15 @@
     grid-template-columns: fit-content auto;
   }
 }
+
+@media (min-width: 960px) {
+  /* md */
+  .main-container {
+    grid-template-areas:
+      "headerarea headerarea"
+      "aside main "
+      "footer footer";
+
+    grid-template-columns: 1fr 3fr;
+  }
+}

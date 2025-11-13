@@ -2,6 +2,13 @@
 
 Changelog project
 
+## [3.5.2] - 2025-11-13
+
+- Update sitemap.xml.
+- Update size in md for sidebar.
+- Some minnor style changes in project section and open web developer section.
+- Remove lazy loading in photo.
+
 ## [3.5.1] - 2025-08-19
 
 - Add some missing personal projects in list.

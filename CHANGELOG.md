@@ -2,6 +2,10 @@
 
 Changelog project
 
+## [4.0.0] - 2026-07-16
+
+- Update sitemap.xml.
+
 ## [3.5.3] - 2026-02-05
 
 - Update sitemap.xml.
